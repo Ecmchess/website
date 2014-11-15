@@ -1,0 +1,4 @@
+ecm_home:
+    resource: "@ECMHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
