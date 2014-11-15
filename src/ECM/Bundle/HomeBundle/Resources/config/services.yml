@@ -1,0 +1,7 @@
+parameters:
+#    ecm_home.example.class: ECM\Bundle\HomeBundle\Example
+
+services:
+#    ecm_home.example:
+#        class: %ecm_home.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
