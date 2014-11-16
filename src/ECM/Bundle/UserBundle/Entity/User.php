@@ -20,21 +20,21 @@ class User extends BaseUser
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="login", type="string", length=255)
      */
-    private $login;
+    protected $login;
 
     /**
      * @var string
      *
      * @ORM\Column(name="pass", type="string", length=255)
      */
-    private $pass;
+    protected $pass;
 
 
     /**
