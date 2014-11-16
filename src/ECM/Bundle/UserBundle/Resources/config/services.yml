@@ -1,0 +1,7 @@
+parameters:
+#    ecm_user.example.class: ECM\Bundle\UserBundle\Example
+
+services:
+#    ecm_user.example:
+#        class: %ecm_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
