@@ -22,20 +22,11 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=255)
-     */
-    protected $login;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pass", type="string", length=255)
-     */
-    protected $pass;
 
+    public function __construct(){
+        parent::__construct();
+    }
 
     /**
      * Get id

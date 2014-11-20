@@ -23,25 +23,41 @@ class MenuBuilder {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-        $menu->addChild('Accueil', array('route' => 'ecm_home_homepage'))
+        $menu->addChild('', array('route' => 'ecm_home_homepage'))
             ->setAttribute('glyphicon', 'home');
 
-        $menu->addChild('User')
+//        $menu->addChild('User')
+//            ->setAttribute('dropdown', true);
+//
+//        $menu['User']->addChild('Profile', array('uri' => '#'))
+//            ->setAttribute('divider_append', true);
+//        $menu['User']->addChild('Logout', array('uri' => '#'));
+//
+//        $menu->addChild('Language')
+//            ->setAttribute('dropdown', true)
+//            ->setAttribute('divider_prepend', true);
+//
+//        $menu['Language']->addChild('Deutsch', array('uri' => '#'));
+//        $menu['Language']->addChild('English', array('uri' => '#'));
+
+        $menu->addChild('Le club')
             ->setAttribute('dropdown', true);
+//            ->setAttribute('glyphicon', 'star');
 
-        $menu['User']->addChild('Profile', array('uri' => '#'))
+        $menu['Le club']->addChild("Horaires d'ouverture", array('route' => 'ecm_home_horaires'));
+        $menu['Le club']->addChild('Tarifs 2014/2015', array('route' => 'ecm_home_tarifs'));
+        $menu['Le club']->addChild('Responsables du club', array('route' => 'ecm_home_responsables'))
             ->setAttribute('divider_append', true);
-        $menu['User']->addChild('Logout', array('uri' => '#'));
-
-        $menu->addChild('Language')
-            ->setAttribute('dropdown', true)
-            ->setAttribute('divider_prepend', true);
+        $menu['Le club']->addChild('Nous contacter', array('route' => 'ecm_home_contact'));
 
 
 
-        $menu['Language']->addChild('Deutsch', array('uri' => '#'));
-        $menu['Language']->addChild('English', array('uri' => '#'));
+        $menu->addChild('Connexion', array('route' => 'fos_user_security_login'))
+            ->setAttribute('glyphicon', 'lock');
+        $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
+            ->setAttribute('glyphicon', 'pencil');
 
+        $menu['Connexion']->setAttribute('class', 'navbar-right');
         return $menu;
     }
 } 

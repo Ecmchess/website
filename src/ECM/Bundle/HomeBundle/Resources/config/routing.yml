@@ -1,3 +1,23 @@
 ecm_home_homepage:
     path:     /
     defaults: { _controller: ECMHomeBundle:Default:index }
+ecm_home_contact:
+    path: /contact
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMHomeBundle:Default:contact.html.twig'
+ecm_home_horaires:
+    path: /horaires
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMHomeBundle:Default:horaires.html.twig'
+ecm_home_tarifs:
+    path: /tarifs-2014-2015
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMHomeBundle:Default:tarifs.html.twig'
+ecm_home_responsables:
+    path: /responsables
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMHomeBundle:Default:responsables.html.twig'
