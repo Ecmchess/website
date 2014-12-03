@@ -1,0 +1,13 @@
+ecm_article_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ECMArticleBundle:Default:index }
+ 
+ecm_articles_admin:
+    path: /admin/articles
+    defaults: { _controller: ECMArticleBundle:Default:administrationArticles }
+    
+ecm_article_admin_modifier:
+    path: /admin/article/{id}
+    defaults: { _controller: ECMArticleBundle:Default:modifier }
+    requirements:
+        format: /d+

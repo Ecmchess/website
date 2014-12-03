@@ -1,3 +1,7 @@
+ecm_article:
+    resource: "@ECMArticleBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ecm_user:
     resource: "@ECMUserBundle/Resources/config/routing.yml"
     prefix:   /

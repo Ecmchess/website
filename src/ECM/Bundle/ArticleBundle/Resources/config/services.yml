@@ -1,0 +1,7 @@
+parameters:
+#    ecm_article.example.class: ECM\Bundle\ArticleBundle\Example
+
+services:
+#    ecm_article.example:
+#        class: %ecm_article.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

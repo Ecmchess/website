@@ -15,4 +15,51 @@ class DefaultController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Template("ECMHomeBundle:Default:article-vitrine.html.twig")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function horairesAction() {
+//        $article = new Article();
+        $em = $this->getDoctrine()->getManager();
+        $article =$em->find('ECMArticleBundle:Article', 1);
+        return array('article' => $article);
+    }
+    
+    /**
+     * @Template("ECMHomeBundle:Default:article-vitrine.html.twig")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function tarifsAction() {
+//        $article = new Article();
+        $em = $this->getDoctrine()->getManager();
+        $article =$em->find('ECMArticleBundle:Article', 2);
+        return array('article' => $article);
+        
+    }
+    
+    /**
+     * @Template("ECMHomeBundle:Default:article-vitrine.html.twig")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function contactAction() {
+//        $article = new Article();
+        $em = $this->getDoctrine()->getManager();
+        $article =$em->find('ECMArticleBundle:Article', 4);
+        return array('article' => $article);
+        
+    }
+    
+    /**
+     * @Template("ECMHomeBundle:Default:article-vitrine.html.twig")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function responsablesAction() {
+//        $article = new Article();
+        $em = $this->getDoctrine()->getManager();
+        $article =$em->find('ECMArticleBundle:Article', 3);
+        return array('article' => $article);
+        
+    }
 }
