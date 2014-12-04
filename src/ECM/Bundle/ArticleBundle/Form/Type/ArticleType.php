@@ -16,7 +16,7 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('titre')
-        ->add('corps')
+        ->add('corps', 'ckeditor')
                 ->add('submit','submit');
     }
 
