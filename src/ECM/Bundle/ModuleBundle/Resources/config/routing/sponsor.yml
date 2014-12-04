@@ -1,0 +1,30 @@
+admin_sponsor:
+    path:     /
+    defaults: { _controller: "ECMModuleBundle:Sponsor:index" }
+
+admin_sponsor_show:
+    path:     /{id}/show
+    defaults: { _controller: "ECMModuleBundle:Sponsor:show" }
+
+admin_sponsor_new:
+    path:     /new
+    defaults: { _controller: "ECMModuleBundle:Sponsor:new" }
+
+admin_sponsor_create:
+    path:     /create
+    defaults: { _controller: "ECMModuleBundle:Sponsor:create" }
+    requirements: { _method: post }
+
+admin_sponsor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ECMModuleBundle:Sponsor:edit" }
+
+admin_sponsor_update:
+    path:     /{id}/update
+    defaults: { _controller: "ECMModuleBundle:Sponsor:update" }
+    requirements: { _method: post|put }
+
+admin_sponsor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ECMModuleBundle:Sponsor:delete" }
+    requirements: { _method: post|delete }

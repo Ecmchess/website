@@ -50,13 +50,45 @@ class MenuBuilder {
             ->setAttribute('divider_append', true);
         $menu['Le club']->addChild('Nous contacter', array('route' => 'ecm_home_contact'));
 
+       
+        
+        $menu->addChild('Equipes jeunes', array('uri' => '#'));
+        $menu->addChild('Cours', array('uri' => '#'));
+        $menu->addChild('Interclub adultes', array('uri' => '#'));
+        $menu->addChild('Cours', array('uri' => '#'));
+        $menu->addChild('Galerie photo', array('uri' => '#'));
 
+        
 
+        return $menu;
+    }
+    
+     public function createAdminMenu (){
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav');
+
+         $menu->addChild('Administration', array('route' => 'ecm_admin_home'))
+            ->setAttribute('glyphicon', 'lock');
+        return $menu;
+    }
+    
+    public function createUserMenu (){
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav');
+
+         $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
+            ->setAttribute('glyphicon', 'lock');
+        return $menu;
+    }
+    
+    public function createAnonymousMenu (){
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav');
+        
         $menu->addChild('Connexion', array('route' => 'fos_user_security_login'))
             ->setAttribute('glyphicon', 'lock');
         $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
             ->setAttribute('glyphicon', 'pencil');
-
         $menu['Connexion']->setAttribute('class', 'navbar-right');
         return $menu;
     }

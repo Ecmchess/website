@@ -1,0 +1,18 @@
+
+{% block sponsors %}
+    <ul>
+    {% for sponsor in sponsors %}
+        <li>
+        {% if sponsor.urlImage != "" %}
+        <a href="http://{{ sponsor.lien }}" target="_blank">
+            <img src="{{ asset('images/sponsors/' ~ sponsor.urlImage ) }}">
+        </a>
+        {% else %}
+        <a href="http://{{ sponsor.lien }}" target="_blank">
+            {{ sponsor.titre }}
+        </a>
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

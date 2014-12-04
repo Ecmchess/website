@@ -13,3 +13,9 @@ ecm_home_tarifs:
 ecm_home_responsables:
     path: /responsables
     defaults: { _controller: ECMHomeBundle:Default:responsables }
+ecm_admin_home:
+    path: /admin
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMHomeBundle:Default:administration.html.twig'
+        

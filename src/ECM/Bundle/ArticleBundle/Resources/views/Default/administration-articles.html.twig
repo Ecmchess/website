@@ -1,5 +1,8 @@
+{% extends 'ECMHomeBundle::layout.html.twig' %}
 
+{% block body %}
 {% for article in articles %}
-    <a href="#">{{ article.titre }}</a>
+    <a href="{{ path('ecm_article_admin_modifier', { 'id': article.id }) }}">{{ article.titre }}</a>
     <br>
 {% endfor %}
+{% endblock %}

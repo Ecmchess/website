@@ -18,3 +18,30 @@ services:
         scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: main }
+            
+    ecm_home.menu.admin:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecm_home.menu_builder
+        factory_method: createAdminMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: admin }
+            
+    ecm_home.menu.anonymous:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecm_home.menu_builder
+        factory_method: createAnonymousMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: anonymous }
+            
+    ecm_home.menu.user:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: ecm_home.menu_builder
+        factory_method: createUserMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: user }

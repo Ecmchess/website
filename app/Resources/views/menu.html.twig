@@ -1,4 +1,13 @@
 
+
 <nav class="navbar navbar-default" role="navigation">
 {{ knp_menu_render('main', {'currentClass': 'active'}) }}
+    {% if is_granted('ROLE_USER') %}
+        {{ knp_menu_render('user', {'currentClass': 'active'}) }}     
+        {% if is_granted('ROLE_ADMIN') %}
+            {{ knp_menu_render('admin', {'currentClass': 'active'}) }}
+        {% endif %}
+    {% else %}
+        {{ knp_menu_render('anonymous', {'currentClass': 'active'}) }}  
+    {% endif %}     
 </nav>
