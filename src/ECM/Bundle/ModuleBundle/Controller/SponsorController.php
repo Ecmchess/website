@@ -123,7 +123,7 @@ class SponsorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $sponsors = $em->getRepository('ECMModuleBundle:Sponsor')->findAll();
+        $sponsors = $em->getRepository('ECMModuleBundle:Sponsor')->findBy(array(), array('ordre' => 'asc'));
 
         return $this->render('ECMModuleBundle:Sponsor:sponsorsFront.html.twig', array(
             'sponsors'      => $sponsors
