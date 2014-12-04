@@ -10,10 +10,10 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-        <div class="logo col-lg-4">
-            <img src="{{ asset('bundles/ecmhome/images/logo-ecmchess.png') }}" alt="Logo Ecmchess">
+        <div class="logo col-lg-offset-1 col-lg-3">
+            <a href="{{ path('ecm_home_homepage') }}"><img src="{{ asset('bundles/ecmhome/images/logo-ecmchess.png') }}" alt="Logo Ecmchess"></a>
         </div>
         <div class="col-lg-8">
         {% block menu %}
@@ -23,14 +23,13 @@
         </div>
     </div>
     <div class="container" id="wrapper">
-        <div class="page-header">
-            {% block titre %}
-            {% endblock %}
-        </div>
-        {% block body %}{% endblock %}
-        {% block sponsors %}
+        {% block content %}
+                {% block sponsors %}
+                {% endblock %}
+                    {% block titre %}
+                    {% endblock %}
+                {% block body %}{% endblock %}
         {% endblock %}
-    </div>
         {% block footer %}
             <div class="footer">
                 <div class="container">

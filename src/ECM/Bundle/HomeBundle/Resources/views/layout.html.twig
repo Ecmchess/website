@@ -1,7 +1,23 @@
 {% extends '::base.html.twig' %}
-{% block titre %}{% endblock %}
-{% block body %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4">
+        {% block sponsors %}
+            {{ render(controller("ECMModuleBundle:Sponsor:showFront")) }}
+        {% endblock %}
+    </div>
+    <div class="col-lg-8">
+        <div class="page-header">
+            <h1>
+                {% block titre %}
+                {% endblock %}
+            </h1>
+        </div>
+        {% block body %}
+        {% endblock %}
+
+    </div>
+</div>
 {% endblock %}
-{% block sponsors %}
-    {{ render(controller("ECMModuleBundle:Sponsor:showFront")) }}
-{% endblock %}
+

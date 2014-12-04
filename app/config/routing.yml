@@ -1,3 +1,7 @@
+ecm_admin:
+    resource: "@ECMAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ecm_module:
     resource: "@ECMModuleBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,5 @@
+ecm_admin_home:
+    path: /admin
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'ECMAdminBundle:Default:index.html.twig'

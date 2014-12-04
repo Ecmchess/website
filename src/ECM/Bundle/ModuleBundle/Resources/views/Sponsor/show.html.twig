@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'ECMAdminBundle::layout.html.twig' %}
 
 {% block body -%}
     <h1>Sponsor</h1>
@@ -31,12 +31,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('admin_sponsor') }}">
-            Back to the list
+            Retourner à la liste des sponsors
         </a>
     </li>
     <li>
         <a href="{{ path('admin_sponsor_edit', { 'id': entity.id }) }}">
-            Edit
+            Éditer
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

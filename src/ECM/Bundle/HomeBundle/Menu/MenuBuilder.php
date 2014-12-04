@@ -53,10 +53,12 @@ class MenuBuilder {
        
         
         $menu->addChild('Equipes jeunes', array('uri' => '#'));
-        $menu->addChild('Cours', array('uri' => '#'));
-        $menu->addChild('Interclub adultes', array('uri' => '#'));
-        $menu->addChild('Cours', array('uri' => '#'));
-        $menu->addChild('Galerie photo', array('uri' => '#'));
+        $menu->addChild('Cours', array('uri' => '#'))
+            ->setAttribute('glyphicon', 'book');
+        $menu->addChild('Interclub adultes', array('uri' => '#'))
+            ->setAttribute('glyphicon', 'tower');
+        $menu->addChild('Galerie photo', array('uri' => '#'))
+            ->setAttribute('glyphicon', 'camera');
 
         
 
@@ -77,7 +79,7 @@ class MenuBuilder {
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
          $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
-            ->setAttribute('glyphicon', 'lock');
+            ->setAttribute('glyphicon', 'off');
         return $menu;
     }
     
@@ -86,7 +88,7 @@ class MenuBuilder {
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
         
         $menu->addChild('Connexion', array('route' => 'fos_user_security_login'))
-            ->setAttribute('glyphicon', 'lock');
+            ->setAttribute('glyphicon', 'off');
         $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
             ->setAttribute('glyphicon', 'pencil');
         $menu['Connexion']->setAttribute('class', 'navbar-right');

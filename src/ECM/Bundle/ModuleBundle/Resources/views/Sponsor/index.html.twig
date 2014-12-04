@@ -1,7 +1,9 @@
-{% extends '::base.html.twig' %}
+{% extends 'ECMAdminBundle::layout.html.twig' %}
 
+{% block titre %}
+<h1>Liste des Sponsors</h1>
+{% endblock %}
 {% block body -%}
-    <h1>Sponsor list</h1>
 
     <table class="records_list">
         <thead>
@@ -25,10 +27,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('admin_sponsor_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('admin_sponsor_show', { 'id': entity.id }) }}">afficher</a>
                     </li>
                     <li>
-                        <a href="{{ path('admin_sponsor_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('admin_sponsor_edit', { 'id': entity.id }) }}">éditer</a>
                     </li>
                 </ul>
                 </td>
@@ -40,7 +42,7 @@
         <ul>
         <li>
             <a href="{{ path('admin_sponsor_new') }}">
-                Create a new entry
+                Ajouter un nouveau sponsor
             </a>
         </li>
     </ul>

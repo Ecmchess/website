@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new ECM\Bundle\ArticleBundle\ECMArticleBundle(),
             new ECM\Bundle\ModuleBundle\ECMModuleBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new ECM\Bundle\AdminBundle\ECMAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block menu %}
+    <nav class="navbar navbar-default" role="navigation">
+            {{ knp_menu_render('mainAdmin', {'currentClass': 'active'}) }}
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1>
+                    {% block titre %}
+                    {% endblock %}
+                </h1>
+            </div>
+            {% block body %}
+            {% endblock %}
+
+        </div>
+    </div>
+{% endblock %}

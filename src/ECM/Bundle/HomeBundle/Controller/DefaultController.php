@@ -23,6 +23,7 @@ class DefaultController extends Controller {
 //        $article = new Article();
         $em = $this->getDoctrine()->getManager();
         $article = $em->find('ECMArticleBundle:Article', 1);
+        if(!$article) throw $this->createNotFoundException('L\'article n\'existe pas');
         return array('article' => $article);
     }
 
@@ -34,6 +35,7 @@ class DefaultController extends Controller {
 //        $article = new Article();
         $em = $this->getDoctrine()->getManager();
         $article = $em->find('ECMArticleBundle:Article', 2);
+        if(!$article) throw $this->createNotFoundException('L\'article n\'existe pas');
         return array('article' => $article);
     }
 
@@ -45,6 +47,7 @@ class DefaultController extends Controller {
 //        $article = new Article();
         $em = $this->getDoctrine()->getManager();
         $article = $em->find('ECMArticleBundle:Article', 4);
+        if(!$article) throw $this->createNotFoundException('L\'article n\'existe pas');
         return array('article' => $article);
     }
 
@@ -56,6 +59,7 @@ class DefaultController extends Controller {
 //        $article = new Article();
         $em = $this->getDoctrine()->getManager();
         $article = $em->find('ECMArticleBundle:Article', 3);
+        if(!$article) throw $this->createNotFoundException('L\'article n\'existe pas');
         return array('article' => $article);
     }
 
