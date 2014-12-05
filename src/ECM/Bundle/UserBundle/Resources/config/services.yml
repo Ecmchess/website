@@ -2,6 +2,7 @@ parameters:
 #    ecm_user.example.class: ECM\Bundle\UserBundle\Example
 
 services:
-#    ecm_user.example:
-#        class: %ecm_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    acme_user.registration.form.type:
+        class: ECM\Bundle\UserBundle\Form\Type\RegistrationFormType
+        tags:
+            - { name: form.type, alias: ecm_user_registration }

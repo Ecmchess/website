@@ -1,7 +1,9 @@
 
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default pull-left" role="navigation">
 {{ knp_menu_render('main', {'currentClass': 'active'}) }}
+</nav>
+<nav class="navbar navbar-default pull-right" role="navigation">
     {% if is_granted('ROLE_USER') %}
         {{ knp_menu_render('user', {'currentClass': 'active'}) }}     
         {% if is_granted('ROLE_ADMIN') %}

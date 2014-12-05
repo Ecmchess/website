@@ -4,11 +4,11 @@
     {% for sponsor in sponsors %}
         <li>
         {% if sponsor.urlImage != "" %}
-        <a href="{{ sponsor.lien }}" target="_blank">
-            <img src="{{ asset('images/sponsor/' ~ sponsor.urlImage ) }}" class="img-thumbnail">
+        <a href="http://{{ sponsor.lien }}" target="_blank">
+            <img src="{{ asset('images/sponsors/' ~ sponsor.urlImage ) }}" class="img-thumbnail">
         </a>
         {% else %}
-        <a href="{{ sponsor.lien }}" target="_blank">
+        <a href="http://{{ sponsor.lien }}" target="_blank">
             {{ sponsor.titre }}
         </a>
         {% endif %}

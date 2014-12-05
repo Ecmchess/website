@@ -88,3 +88,5 @@ fos_user:
     registration:
         confirmation:
             enabled:    true
+        form:
+            type: ecm_user_registration
