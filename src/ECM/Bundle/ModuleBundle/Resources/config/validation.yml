@@ -1,0 +1,7 @@
+# src/ECM/ModuleBundle/Resources/config/validation.yml
+ECM\ModuleBundle\Entity\Sponsor:
+    properties:
+        ordre:
+            - Range:
+                min: 0
+                minMessage: Entrez un nombre positif.

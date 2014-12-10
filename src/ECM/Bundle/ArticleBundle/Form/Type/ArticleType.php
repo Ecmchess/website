@@ -17,7 +17,7 @@ class ArticleType extends AbstractType
     {
         $builder->add('titre')
         ->add('corps', 'ckeditor')
-                ->add('submit','submit');
+                ->add('Valider','submit');
     }
 
     public function getName()

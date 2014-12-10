@@ -8,7 +8,6 @@
     <table class="records_list">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>Urlimage</th>
                 <th>Lien</th>
@@ -19,7 +18,6 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('admin_sponsor_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.titre }}</td>
                 <td>{{ entity.urlImage }}</td>
                 <td>{{ entity.lien }}</td>

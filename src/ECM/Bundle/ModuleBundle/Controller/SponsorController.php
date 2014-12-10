@@ -88,7 +88,8 @@ class SponsorController extends Controller
      */
     public function newAction()
     {
-        $entity = new Sponsor();
+        
+        $entity = new Sponsor();       
         $form   = $this->createCreateForm($entity);
 
         return $this->render('ECMModuleBundle:Sponsor:new.html.twig', array(
@@ -163,12 +164,19 @@ class SponsorController extends Controller
     */
     private function createEditForm(Sponsor $entity)
     {
+//        $validator = $this->get('validator');
+//        $errorList = $validator->validate($entity);
+//        if (count($errorList) > 0) {
+//        return $errorList;
+//    } else {
+//        return $form;
+//    }
         $form = $this->createForm(new SponsorType(), $entity, array(
             'action' => $this->generateUrl('admin_sponsor_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Modifier'));
 
         return $form;
     }
@@ -245,7 +253,7 @@ class SponsorController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('admin_sponsor_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Supprimer'))
             ->getForm()
         ;
     }
