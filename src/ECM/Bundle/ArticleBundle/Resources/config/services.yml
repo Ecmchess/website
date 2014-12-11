@@ -4,9 +4,22 @@ parameters:
 services:
 #    ecm_article.example:
 #        class: %ecm_article.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-    ecm.admin.article:
+##        arguments: [@service_id, "plain_value", %parameter%]
+
+#    ecm.admin.article:
+#        class: ECM\Bundle\ArticleBundle\Admin\ArticleAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: ecm, label: Articles }
+#        arguments: [null, ECM\Bundle\ArticleAdmin\Entity\Article, ECMArticleBundle:ArticleAdmin]
+        
+    sonata.admin.article:
         class: ECM\Bundle\ArticleBundle\Admin\ArticleAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: ecm, label: Articles }
-        arguments: [null, ECM\Bundle\ArticleAdmin\Entity\Article, ECMArticleBundle:ArticleAdmin]
+            - name: sonata.admin
+              manager_type: orm
+              group: "admin"
+              label: "Article"
+        arguments:
+            - ~
+            - ECM\Bundle\ArticleBundle\Entity\Article
+            - ~
