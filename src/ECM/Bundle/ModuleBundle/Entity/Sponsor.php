@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\SponsorRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Sponsor {
 
@@ -49,21 +50,36 @@ class Sponsor {
      * @ORM\Column(name="ordre", type="integer")
      */
     private $ordre;
-    
+
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="updated", type="date", nullable=true)
+     */
+    private $updated;
+
+    /**
+     * @var file
+     *
+     */
+
     private $image;
+
+
 
     public function getImage() {
         return $this->image;
     }
 
-    public function setImage(UploadedFile $file = null) {
-        $this->image = $file;
+    public function setImage(UploadedFile $image = null) {
+        $this->image = $image;
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId() {
         return $this->id;
@@ -84,7 +100,7 @@ class Sponsor {
     /**
      * Get titre
      *
-     * @return string 
+     * @return string
      */
     public function getTitre() {
         return $this->titre;
@@ -105,7 +121,7 @@ class Sponsor {
     /**
      * Get urlImage
      *
-     * @return string 
+     * @return string
      */
     public function getUrlImage() {
         return $this->urlImage;
@@ -126,7 +142,7 @@ class Sponsor {
     /**
      * Get lien
      *
-     * @return string 
+     * @return string
      */
     public function getLien() {
         return $this->lien;
@@ -147,7 +163,7 @@ class Sponsor {
     /**
      * Get ordre
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrdre() {
         return $this->ordre;
@@ -172,25 +188,104 @@ class Sponsor {
         return 'images/sponsor';
     }
 
-    public function upload() {
-        // la propriété « file » peut être vide si le champ n'est pas requis
+//    /**
+//     * @ORM\PostPersist()
+//     * @ORM\PostUpdate()
+//     */
+//    public function upload() {
+//        // la propriété « image » peut être vide si le champ n'est pas requis
+//        if (null === $this->image) {
+//            return;
+//        }
+//
+//        // utilisez le nom de fichier original ici mais
+//        // vous devriez « l'assainir » pour au moins éviter
+//        // quelconques problèmes de sécurité
+//        // la méthode « move » prend comme arguments le répertoire cible et
+//        // le nom de fichier cible où le fichier doit être déplacé
+//        $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
+//
+//        // définit la propriété « urlImage » comme étant le nom de fichier où vous
+//        // avez stocké le fichier
+//        $this->urlImage = $this->image->getClientOriginalName();
+//
+//        // « nettoie » la propriété « image » comme vous n'en aurez plus besoin
+//        $this->image = null;
+//    }
+
+//    /**
+//     * @ORM\PrePersist()
+//     * @ORM\PreUpdate()
+//     */
+//    public function preUpload()
+//    {
+//        echo '<pre>';
+//        var_dump($this);
+//        echo '</pre>';
+//        if (null !== $this->image) {
+//            // faites ce que vous voulez pour générer un nom unique
+//            $this->urlImage = sha1(uniqid(mt_rand(), true)).'.'.$this->image->guessExtension();
+//        }
+//    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function upload()
+    {
         if (null === $this->image) {
             return;
         }
-
-        // utilisez le nom de fichier original ici mais
-        // vous devriez « l'assainir » pour au moins éviter
-        // quelconques problèmes de sécurité
-        // la méthode « move » prend comme arguments le répertoire cible et
-        // le nom de fichier cible où le fichier doit être déplacé
-        $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
-
-        // définit la propriété « path » comme étant le nom de fichier où vous
-        // avez stocké le fichier
         $this->urlImage = $this->image->getClientOriginalName();
-
-        // « nettoie » la propriété « file » comme vous n'en aurez plus besoin
+        // s'il y a une erreur lors du déplacement du fichier, une exception
+        // va automatiquement être lancée par la méthode move(). Cela va empêcher
+        // proprement l'entité d'être persistée dans la base de données si
+        // erreur il y a
+        $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
         $this->image = null;
     }
 
+//    /**
+//     * @ORM\PostRemove()
+//     */
+//    public function removeUpload()
+//    {
+//        if ($image = $this->getAbsolutePath()) {
+//            unlink($image);
+//        }
+//    }
+
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function refreshUpdated() {
+        $this->setUpdated(new \DateTime("now"));
+//        $this->urlImage = $this->image->getClientOriginalName();
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Sponsor
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
 }

@@ -16,6 +16,9 @@ use ECM\Bundle\ModuleBundle\Form\SponsorType;
 class SponsorController extends Controller
 {
 
+
+
+
     /**
      * Lists all Sponsor entities.
      *
@@ -41,17 +44,17 @@ class SponsorController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $entity->upload();
-            $id = $entity->getId();
-            $titre = $entity->getTitre();
-            $urlImage = $entity->getUrlImage();
-            $lien = $entity->getLien();
-            $ordre = $entity->getOrdre();
+//            $entity->upload();
+//            $id = $entity->getId();
+//            $titre = $entity->getTitre();
+//            $urlImage = $entity->getUrlImage();
+//            $lien = $entity->getLien();
+//            $ordre = $entity->getOrdre();
             $em = $this->getDoctrine()->getManager();
-            $em->getConnection()->executeUpdate('CALL ordre_proc (\''.$titre.'\',\''.$urlImage.'\',\''.$lien.'\',\''.$ordre.'\')');
+//            $em->getConnection()->executeUpdate('CALL ordre_proc (\''.$titre.'\',\''.$urlImage.'\',\''.$lien.'\',\''.$ordre.'\')');
 //            $er = $em->getRepository('ECMModuleBundle:Sponsor');
 //            $er->ajouterSponsor($entity);
-//            $em->persist($entity);
+            $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_sponsor'));
@@ -191,13 +194,14 @@ class SponsorController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $entity->upload();
+//            $entity->upload();
             $idE = $entity->getId();
             $titre = $entity->getTitre();
             $urlImage = $entity->getUrlImage();
             $lien = $entity->getLien();
             $ordre = $entity->getOrdre();
             $em->getConnection()->executeUpdate('CALL ordre_proc_update (\''.$idE.'\',\''.$titre.'\',\''.$urlImage.'\',\''.$lien.'\',\''.$ordre.'\')');
+            $em->persist($entity);
             $em->flush();
             
             return $this->redirect($this->generateUrl('admin_sponsor_edit', array('id' => $id)));

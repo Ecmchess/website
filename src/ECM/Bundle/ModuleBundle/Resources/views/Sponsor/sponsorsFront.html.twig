@@ -5,7 +5,8 @@
         <li>
         {% if sponsor.urlImage != "" %}
         <a href="{{ sponsor.lien }}" target="_blank">
-            <img src="{{ asset('images/sponsor/' ~ sponsor.urlImage ) }}" class="img-thumbnail">
+            <img src="{{ asset(sponsor.webPath) }}" class="img-thumbnail">
+            {#<img src="{{ asset('images/sponsor/' ~ sponsor.urlImage ) }}" class="img-thumbnail">#}
         </a>
         {% else %}
         <a href="{{ sponsor.lien }}" target="_blank">

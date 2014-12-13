@@ -36,7 +36,14 @@ class ArticleAdmin extends Admin{
     {
         $listMapper
             ->add('titre')
-            ->add('corps');
+            ->add('corps', 'ckeditor')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'view' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ));
     }
     
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

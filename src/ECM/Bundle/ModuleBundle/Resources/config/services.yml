@@ -5,3 +5,20 @@ services:
 #    ecm_module.example:
 #        class: %ecm_module.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.admin.sponsor:
+        class: ECM\Bundle\ModuleBundle\Admin\SponsorAdmin
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: "admin"
+              label: "Sponsor"
+        arguments:
+            - ~
+            - ECM\Bundle\ModuleBundle\Entity\Sponsor
+            - ~
+
+    ecm_module.admin.menu:
+        class: ECM\Bundle\ModuleBundle\Admin\MenuAdmin
+        arguments: [~, ECM\Bundle\ModuleBundle\Entity\Menu, ECMModuleBundle:MenuAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Menu}
