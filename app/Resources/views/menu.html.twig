@@ -1,7 +1,8 @@
 
 
 <nav class="navbar navbar-default pull-left" role="navigation">
-{{ knp_menu_render('main', {'currentClass': 'active'}) }}
+{#{{ knp_menu_render('main', {'currentClass': 'active'}) }}#}
+    {{ knp_menu_render('generated', {'currentClass': 'active'}) }}
 </nav>
 <nav class="navbar navbar-default pull-right" role="navigation">
     {% if is_granted('ROLE_USER') %}

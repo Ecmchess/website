@@ -1,0 +1,167 @@
+<?php
+
+namespace ECM\Bundle\ModuleBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Menu
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
+ */
+class Menu
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=255)
+     */
+    private $titre;
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="glyphicon", type="string", length=255, nullable=true)
+     */
+    private $glyphicon;
+
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="ECM\Bundle\ArticleBundle\Entity\Article", mappedBy="menu")
+     */
+    private $articles;
+
+
+    public function __construct(){
+        $this->articles = new ArrayCollection();
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     * @return Menu
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+    
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string 
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set route
+     *
+     * @param string $route
+     * @return Menu
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+    
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return string 
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
+
+    /**
+     * Set glyphicon
+     *
+     * @param string $glyphicon
+     * @return Menu
+     */
+    public function setGlyphicon($glyphicon)
+    {
+        $this->glyphicon = $glyphicon;
+    
+        return $this;
+    }
+
+    /**
+     * Get glyphicon
+     *
+     * @return string 
+     */
+    public function getGlyphicon()
+    {
+        return $this->glyphicon;
+    }
+
+   
+
+    /**
+     * Add articles
+     *
+     * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
+     * @return Menu
+     */
+    public function addArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
+    {
+        $this->articles[] = $articles;
+    
+        return $this;
+    }
+
+    /**
+     * Remove articles
+     *
+     * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
+     */
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
+    {
+        $this->articles->removeElement($articles);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+}

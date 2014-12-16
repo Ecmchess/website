@@ -14,6 +14,18 @@ class DefaultController extends Controller {
     }
 
     /**
+     * @Template("ECMArticleBundle:Default:show.html.twig")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showArticlesByMenuAction($titreMenu){
+        $aR = $this->getDoctrine()->getRepository('ECMArticleBundle:Article');
+        $mR = $this->getDoctrine()->getRepository('ECMModuleBundle:Menu');
+        $menu = $mR->findOneBy(array('titre' => $titreMenu));
+        $articles = $aR->findBy(array('menu' => $menu));
+        return array('articles' => $articles, 'menu' => $titreMenu);
+    }
+
+    /**
      * @Template("ECMArticleBundle:Default:administration-articles.html.twig")
      * @return \Symfony\Component\HttpFoundation\Response
      */

@@ -16,7 +16,6 @@ class MenuAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('titre')
         ;
     }
@@ -27,11 +26,9 @@ class MenuAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('titre')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
                 )
@@ -45,8 +42,8 @@ class MenuAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
             ->add('titre')
+            ->add('glyphicon')
         ;
     }
 
@@ -60,4 +57,6 @@ class MenuAdmin extends Admin
             ->add('titre')
         ;
     }
+
+
 }

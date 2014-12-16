@@ -11,15 +11,25 @@ services:
 #        tags:
 #            - { name: sonata.admin, manager_type: orm, group: ecm, label: Articles }
 #        arguments: [null, ECM\Bundle\ArticleAdmin\Entity\Article, ECMArticleBundle:ArticleAdmin]
-        
+
+    acme_basiccms.basic_cms.phpcr.initializer:
+        class: Doctrine\Bundle\PHPCRBundle\Initializer\GenericInitializer
+        arguments:
+            - Initializer
+            - ["/cms/pages", "/cms/routes"]
+        tags:
+            - { name: doctrine_phpcr.initializer }
+
+
     sonata.admin.article:
         class: ECM\Bundle\ArticleBundle\Admin\ArticleAdmin
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: "admin"
-              label: "Article"
+              group: "Contenu"
+              label: "Articles"
         arguments:
             - ~
             - ECM\Bundle\ArticleBundle\Entity\Article
             - ~
+

@@ -1,0 +1,7 @@
+# src/ECM/Bundle/ArticleBundle/Resources/config/cmf_routing_auto.yml
+#
+ECM\Bundle\ArticleBundle\Entity\Article:
+    uri_schema: /{menu}/{titre}
+    token_providers:
+        menu: [content_method, { method: getMenuTitre }]
+        titre: [content_method, { method: getTitre }]

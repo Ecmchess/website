@@ -2,7 +2,9 @@
 
 namespace ECM\Bundle\ModuleBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 /**
  * Menu
@@ -10,8 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
  */
-class Menu
-{
+class Menu extends ContainerAware{
     /**
      * @var integer
      *
@@ -27,6 +28,27 @@ class Menu
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="glyphicon", type="string", length=255, nullable=true)
+     */
+    private $glyphicon;
+
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="ECM\Bundle\ArticleBundle\Entity\Article", mappedBy="menu")
+     */
+    private $articles;
+
+
+    public function __construct(){
+        $this->articles = new ArrayCollection();
+    }
 
 
     /**
@@ -61,4 +83,73 @@ class Menu
     {
         return $this->titre;
     }
+
+
+
+    /**
+     * Set glyphicon
+     *
+     * @param string $glyphicon
+     * @return Menu
+     */
+    public function setGlyphicon($glyphicon)
+    {
+        $this->glyphicon = $glyphicon;
+    
+        return $this;
+    }
+
+    /**
+     * Get glyphicon
+     *
+     * @return string 
+     */
+    public function getGlyphicon()
+    {
+        return $this->glyphicon;
+    }
+
+   
+
+    /**
+     * Add articles
+     *
+     * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
+     * @return Menu
+     */
+    public function addArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
+    {
+        $this->articles[] = $articles;
+    
+        return $this;
+    }
+
+    /**
+     * Remove articles
+     *
+     * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
+     */
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
+    {
+        $this->articles->removeElement($articles);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+
+
+
+
+
+
+
+
 }

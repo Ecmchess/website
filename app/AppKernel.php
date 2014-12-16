@@ -7,6 +7,7 @@ class AppKernel extends Kernel {
 
     public function registerBundles() {
         $bundles = array(
+            //Bundles systèmes ----------------------------------------
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -14,26 +15,42 @@ class AppKernel extends Kernel {
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle,
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+            //Bundles internes ECM ----------------------------------------
             new ECM\Bundle\HomeBundle\ECMHomeBundle(),
-            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new ECM\Bundle\UserBundle\ECMUserBundle(),
             new ECM\Bundle\ArticleBundle\ECMArticleBundle(),
             new ECM\Bundle\ModuleBundle\ECMModuleBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new ECM\Bundle\AdminBundle\ECMAdminBundle(),
-            // Add your dependencies
+            //Bundles externes ----------------------------------------
+            //Slugify
+            new Cocur\Slugify\Bridge\Symfony\CocurSlugifyBundle(),
+            //Bootstrap
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            //KNP
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            //FOS User
+            new FOS\UserBundle\FOSUserBundle(),
+            //CK Editor
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            // Sonata
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-            //...
-            // If you haven't already, add the storage bundle
-            // This example uses SonataDoctrineORMAdmin but
-            // it works the same with the alternatives
+//            new Sonata\PageBundle\SonataPageBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            // Then add SonataAdminBundle
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+//            new Sonata\CacheBundle\SonataCacheBundle(),
+//            new Sonata\SeoBundle\SonataSeoBundle(),
+//            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+//            new Sonata\NotificationBundle\SonataNotificationBundle(),
+//            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
+//            new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

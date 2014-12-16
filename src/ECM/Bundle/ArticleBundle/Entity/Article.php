@@ -3,14 +3,18 @@
 namespace ECM\Bundle\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
+
+use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCR;
 
 /**
  * Article
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")/**
+ * @PHPCR\Document(referenceable=true)
  */
-class Article
+class Article implements RouteReferrersReadInterface
 {
     /**
      * @var integer
@@ -25,6 +29,8 @@ class Article
      * @var string
      *
      * @ORM\Column(name="titre", type="text")
+     *
+     * @PHPCR\Nodename()
      */
     private $titre;
 
@@ -34,6 +40,22 @@ class Article
      * @ORM\Column(name="corps", type="text")
      */
     private $corps;
+
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="article", cascade={"persist"})
+     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
+     */
+    private $menu;
+
+
+    protected $routes;
+
+    public function getRoutes()
+    {
+        return $this->routes;
+    }
 
 
     /**
@@ -91,4 +113,33 @@ class Article
     {
         return $this->corps;
     }
+
+
+  
+
+    /**
+     * Set menu
+     *
+     * @param \ECM\Bundle\ModuleBundle\Entity\Menu $menu
+     * @return Article
+     */
+    public function setMenu(\ECM\Bundle\ModuleBundle\Entity\Menu $menu = null)
+    {
+        $this->menu = $menu;
+    
+        return $this;
+    }
+
+    /**
+     * Get menu
+     *
+     * @return \ECM\Bundle\ModuleBundle\Entity\Menu 
+     */
+    public function getMenu()
+    {
+        return $this->menu;
+    }
+
+
+
 }

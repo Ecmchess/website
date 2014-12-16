@@ -29,7 +29,9 @@ class ArticleAdmin extends Admin{
     {
         $formMapper
             ->add('titre')
-            ->add('corps', 'ckeditor');
+            ->add('corps', 'ckeditor')
+            ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
+            ;
     }
     
     protected function configureListFields(ListMapper $listMapper)

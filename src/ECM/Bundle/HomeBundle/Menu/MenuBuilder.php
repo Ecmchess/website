@@ -9,14 +9,18 @@
 namespace ECM\Bundle\HomeBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\Request;
 
-class MenuBuilder {
+class MenuBuilder extends ContainerAware {
 
     private $factory;
+    private $serviceContainer;
 
-    public function __construct(FactoryInterface $factory){
+    public function __construct(FactoryInterface $factory, Container $container){
         $this->factory = $factory;
+        $this->serviceContainer = $container;
     }
 
     public function createMainMenu (){
@@ -69,7 +73,7 @@ class MenuBuilder {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-         $menu->addChild('Administration', array('route' => 'ecm_admin_home'))
+         $menu->addChild('Administration', array('route' => 'sonata_admin_dashboard'))
             ->setAttribute('glyphicon', 'lock');
         return $menu;
     }
@@ -94,4 +98,18 @@ class MenuBuilder {
         $menu['Connexion']->setAttribute('class', 'navbar-right');
         return $menu;
     }
+
+
+    public function generateMenu(){
+
+        $menu = $this->factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav');
+        $menus = $this->serviceContainer->get('ecm_home.menus.container')->getMenus();
+        foreach ($menus as $menuItem) {
+            $menu->addChild($menuItem->getTitre(), array('uri' => $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre())));
+        }
+
+        return $menu;
+    }
+
 } 

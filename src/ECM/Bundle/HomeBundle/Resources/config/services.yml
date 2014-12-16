@@ -6,9 +6,14 @@ services:
 #        class: %ecm_home.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
 
+    ecm_home.menus.container:
+        class: ECM\Bundle\HomeBundle\MenusContainer\MenusContainer
+        arguments: ["@service_container"]
+
+
     ecm_home.menu_builder:
         class: ECM\Bundle\HomeBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory"]
+        arguments: ["@knp_menu.factory", "@service_container"]
 
     ecm_home.menu.main:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
@@ -45,3 +50,13 @@ services:
         scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: user }
+
+
+    ecm_home.menu.generated:
+            class: Knp\Menu\MenuItem # the service definition requires setting the class
+            factory_service: ecm_home.menu_builder
+            factory_method: generateMenu
+            arguments: ["@request"]
+            scope: request # needed as we have the request as a dependency here
+            tags:
+                - { name: knp_menu.menu, alias: generated }

@@ -10,8 +10,8 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: "admin"
-              label: "Sponsor"
+              group: "Modules"
+              label: "Sponsors"
         arguments:
             - ~
             - ECM\Bundle\ModuleBundle\Entity\Sponsor
@@ -21,4 +21,4 @@ services:
         class: ECM\Bundle\ModuleBundle\Admin\MenuAdmin
         arguments: [~, ECM\Bundle\ModuleBundle\Entity\Menu, ECMModuleBundle:MenuAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Menu}
+            - {name: sonata.admin, manager_type: orm, group: Modules, label: Menus}
