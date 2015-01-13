@@ -4,9 +4,9 @@
 #    path: /admin/articles
 #    defaults: { _controller: ECMArticleBundle:Default:administrationArticles }
 
-#ecm_articles_show_by_menu:
-#    path: /{titreMenu}
-#    defaults: { _controller: ECMArticleBundle:Default:showArticlesByMenu }
+ecm_articles_show_by_menu:
+    path: /ecm/{titreMenu}
+    defaults: { _controller: ECMArticleBundle:Default:showArticlesByMenu }
 
 
 #ecm_article_admin_modifier:
