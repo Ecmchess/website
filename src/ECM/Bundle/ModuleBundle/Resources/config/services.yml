@@ -15,7 +15,12 @@ services:
         arguments:
             - ~
             - ECM\Bundle\ModuleBundle\Entity\Sponsor
-            - ~
+            - 'PixSortableBehaviorBundle:SortableAdmin' # define the new controller via the third argument
+        calls:
+            - [setContainer, [@service_container]]
+            - [setPositionService, [@pix_sortable_behavior.position]]
+
+
 
     ecm_module.admin.menu:
         class: ECM\Bundle\ModuleBundle\Admin\MenuAdmin

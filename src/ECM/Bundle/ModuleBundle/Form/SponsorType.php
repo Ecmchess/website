@@ -18,7 +18,7 @@ class SponsorType extends AbstractType
             ->add('titre', 'text' ,array('label' => 'Le titre'))
             ->add('image', 'file', array('required' => false))
             ->add('lien')
-            ->add('ordre')
+            ->add('position')
         ;
     }
     

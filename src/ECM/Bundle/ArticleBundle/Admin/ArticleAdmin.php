@@ -47,7 +47,9 @@ class ArticleAdmin extends Admin{
                 )
             ));
     }
-    
+
+
+
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
@@ -55,27 +57,7 @@ class ArticleAdmin extends Admin{
             ->add('corps')
         ;
     }
- 
-//    protected function configureListFields(ListMapper $listMapper)
-//    {
-//        $listMapper
-//            ->addIdentifier('company')
-//            ->add('position')
-//            ->add('location')
-//            ->add('url')
-//            ->add('is_activated')
-//            ->add('email')
-//            ->add('category')
-//            ->add('expires_at')
-//            ->add('_action', 'actions', array(
-//                'actions' => array(
-//                    'view' => array(),
-//                    'edit' => array(),
-//                    'delete' => array(),
-//                )
-//            ))
-//        ;
-//    }
+
  
     protected function configureShowField(ShowMapper $showMapper)
     {

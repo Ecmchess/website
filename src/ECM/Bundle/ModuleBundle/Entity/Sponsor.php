@@ -4,12 +4,14 @@ namespace ECM\Bundle\ModuleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Sponsor
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\SponsorRepository")
+ * @ORM\Entity(repositoryClass="Gedmo\Sortable\Entity\Repository\SortableRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Sponsor {
@@ -47,9 +49,10 @@ class Sponsor {
     /**
      * @var integer
      *
-     * @ORM\Column(name="ordre", type="integer")
+     *@Gedmo\SortablePosition
+     * @ORM\Column(name="position", type="integer")
      */
-    private $ordre;
+    private $position;
 
 
     /**
@@ -148,26 +151,7 @@ class Sponsor {
         return $this->lien;
     }
 
-    /**
-     * Set ordre
-     *
-     * @param integer $ordre
-     * @return Sponsor
-     */
-    public function setOrdre($ordre) {
-        $this->ordre = $ordre;
-
-        return $this;
-    }
-
-    /**
-     * Get ordre
-     *
-     * @return integer
-     */
-    public function getOrdre() {
-        return $this->ordre;
-    }
+    
 
     public function getAbsolutePath() {
         return null === $this->urlImage ? null : $this->getUploadRootDir() . '/' . $this->urlImage;
@@ -242,6 +226,13 @@ class Sponsor {
         // va automatiquement être lancée par la méthode move(). Cela va empêcher
         // proprement l'entité d'être persistée dans la base de données si
         // erreur il y a
+
+
+
+
+
+
+
         $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
         $this->image = null;
     }
@@ -287,5 +278,28 @@ class Sponsor {
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     * @return Sponsor
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer 
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

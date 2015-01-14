@@ -27,6 +27,8 @@ class AppKernel extends Kernel {
             new ECM\Bundle\ModuleBundle\ECMModuleBundle(),
             new ECM\Bundle\AdminBundle\ECMAdminBundle(),
             //Bundles externes ----------------------------------------
+            new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             //Slugify
             new Cocur\Slugify\Bridge\Symfony\CocurSlugifyBundle(),
             //Bootstrap

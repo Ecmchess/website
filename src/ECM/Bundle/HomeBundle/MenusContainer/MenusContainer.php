@@ -23,4 +23,8 @@ class MenusContainer {
         return $this->doctrine->getRepository('ECMModuleBundle:Menu')->findAll();
     }
 
+    public function getSubMenus($menu){
+        return $this->doctrine->getRepository('ECMModuleBundle:Menu')->getSubMenus($menu);
+    }
+
 } 

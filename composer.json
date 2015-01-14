@@ -52,7 +52,11 @@
         "symfony-cmf/routing-auto-bundle": "~1.0",
         "doctrine/phpcr-odm": "1.2.*",
         "doctrine/phpcr-bundle": "1.2.*",
-        "jackalope/jackalope-doctrine-dbal": "~1.1"
+        "jackalope/jackalope-doctrine-dbal": "~1.1",
+        "gedmo/doctrine-extensions": "~2.3",
+        "knplabs/doctrine-behaviors": "~1.0",
+        "pixassociates/sortable-behavior-bundle": "0.1.*@dev",
+        "stof/doctrine-extensions-bundle": "~1.1"
 
 },
     "scripts": {

@@ -44,6 +44,7 @@ class Article implements RouteReferrersReadInterface
     /**
      * @var string
      *
+     *
      * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="article", cascade={"persist"})
      * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
      */

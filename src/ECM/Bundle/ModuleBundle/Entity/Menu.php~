@@ -4,6 +4,7 @@ namespace ECM\Bundle\ModuleBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 /**
  * Menu
@@ -11,8 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
  */
-class Menu
-{
+class Menu extends ContainerAware{
     /**
      * @var integer
      *
@@ -41,9 +41,18 @@ class Menu
     /**
      * @var
      *
-     * @ORM\OneToMany(targetEntity="ECM\Bundle\ArticleBundle\Entity\Article", mappedBy="menu")
+     * @ORM\OneToMany(targetEntity="ECM\Bundle\ArticleBundle\Entity\Article", mappedBy="menu", cascade={"remove"})
      */
     private $articles;
+
+    /**
+     * @var integer
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="menu", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
+     */
+    private $parent;
 
 
     public function __construct(){
@@ -84,28 +93,7 @@ class Menu
         return $this->titre;
     }
 
-    /**
-     * Set route
-     *
-     * @param string $route
-     * @return Menu
-     */
-    public function setRoute($route)
-    {
-        $this->route = $route;
-    
-        return $this;
-    }
 
-    /**
-     * Get route
-     *
-     * @return string 
-     */
-    public function getRoute()
-    {
-        return $this->route;
-    }
 
     /**
      * Set glyphicon
@@ -164,4 +152,13 @@ class Menu
     {
         return $this->articles;
     }
+
+
+
+
+
+
+
+
+
 }

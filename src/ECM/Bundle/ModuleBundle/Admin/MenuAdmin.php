@@ -44,6 +44,7 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('titre')
             ->add('glyphicon')
+            ->add('parent', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
         ;
     }
 

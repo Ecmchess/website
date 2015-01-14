@@ -107,7 +107,17 @@ class MenuBuilder extends ContainerAware {
         $menus = $this->serviceContainer->get('ecm_home.menus.container')->getMenus();
         foreach ($menus as $menuItem) {
             $slug = $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre());
-            $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
+//            $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
+            $subMenus = $this->serviceContainer->get('ecm_home.menus.container')->getSubMenus($menuItem);
+            if($subMenus != null){
+                $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
+                $menu[$menuItem->getTitre()]->setAttribute('dropdown', true);
+                foreach( $subMenus as $subMenuItem){
+                    $menu[$menuItem->getTitre()]->addChild($subMenuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
+                }
+            } else {
+                $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
+            }
 //            $menu->addChild($menuItem->getTitre(), array('uri' => $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre())));
         }
 
