@@ -105,6 +105,8 @@ class MenuBuilder extends ContainerAware {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
         $menus = $this->serviceContainer->get('ecm_home.menus.container')->getMenus();
+        $menu->addChild('', array('route' => 'ecm_home_homepage'))
+            ->setAttribute('glyphicon', 'home');
         foreach ($menus as $menuItem) {
             $slug = $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre());
             $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));

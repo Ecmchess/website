@@ -20,7 +20,11 @@ class DefaultController extends Controller {
     public function showArticlesByMenuAction($titreMenu){
         $aR = $this->getDoctrine()->getRepository('ECMArticleBundle:Article');
         $mR = $this->getDoctrine()->getRepository('ECMModuleBundle:Menu');
+        $titreMenu = ucfirst(preg_replace('#-#', ' ', $titreMenu));
         $menu = $mR->findOneBy(array('titre' => $titreMenu));
+        var_dump('Hello');
+        var_dump(is_writeable('/home/licences/bertrandm/public_html/ecmchess/app/cache/'));
+        var_dump(is_writeable('/home/licences/bertrandm/public_html/ecmchess/web/images/sponsors'));
         $articles = $aR->findBy(array('menu' => $menu));
         return array('articles' => $articles, 'menu' => $titreMenu);
     }
