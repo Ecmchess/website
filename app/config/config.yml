@@ -42,8 +42,12 @@ assetic:
             node_paths: [/usr/lib/node_modules]
             apply_to: "\.less$"
         cssrewrite: ~
+        
+        
 braincrafted_bootstrap:
     less_filter: less
+    customize:
+        variables_file: %kernel.root_dir%/Resources/BraincraftedBootstrapBundle/less/variables.less
 
 # Doctrine Configuration
 doctrine:
