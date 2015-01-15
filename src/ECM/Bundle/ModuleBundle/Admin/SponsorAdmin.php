@@ -82,7 +82,6 @@ class SponsorAdmin extends Admin{
             ->add('position', 'number')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'view' => array(),
                     'edit' => array(),
                     'delete' => array(),
                     'move' => array('template' => 'PixSortableBehaviorBundle:Default:_sort.html.twig')

@@ -26,7 +26,8 @@ class MenuAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('titre')
+            ->addIdentifier('titre')
+            ->add('parent.titre', null, array('label'=>'Menu parent'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

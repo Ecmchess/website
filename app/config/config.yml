@@ -133,10 +133,14 @@ sonata_block:
             
 
 sonata_admin:
+    title: ECM
+    options:
+        title_mode: single_image
+    title_logo: bundles/ecmhome/images/logo-ecmchess.png
     templates:
         user_block:           SonataAdminBundle:Core:user_block.html.twig
         add_block:            SonataAdminBundle:Core:add_block.html.twig
-        layout:               SonataAdminBundle::layout.html.twig
+        layout:               ECMAdminBundle::layout.html.twig
         ajax:                 SonataAdminBundle::ajax_layout.html.twig
         dashboard:            SonataAdminBundle:Core:dashboard.html.twig
         search:               SonataAdminBundle:Core:search.html.twig
@@ -162,6 +166,27 @@ sonata_admin:
         pager_links:          SonataAdminBundle:Pager:links.html.twig
         pager_results:        SonataAdminBundle:Pager:results.html.twig
         tab_menu_template:    SonataAdminBundle:Core:tab_menu_template.html.twig
+    dashboard:
+            blocks:
+                -
+                    position: left
+                    type: sonata.admin.block.admin_list
+#                -
+#                    position: right
+#                    type: sonata.block.service.text
+#                    settings:
+#                        content: >
+#                            <h2>Welcome to the Sonata Admin</h2>
+#                            <p>This is a <code>sonata.block.service.text</code> from the Block
+#                            Bundle, you can create and add new block in these area by configuring
+#                            the <code>sonata_admin</code> section.</p> <br /> For instance, here
+#                            a RSS feed parser (<code>sonata.block.service.rss</code>):
+#                -
+#                    position: right
+#                    type: sonata.block.service.rss
+#                    settings:
+#                        title: Sonata Project's Feeds
+#                        url: http://sonata-project.org/blog/archive.rss
 
 #    assets:
 #        javascripts:

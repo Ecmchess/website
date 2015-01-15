@@ -49,7 +49,7 @@ class Menu extends ContainerAware{
      * @var integer
      *
      *
-     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", cascade={"remove"})
      * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
      */
     private $parent;

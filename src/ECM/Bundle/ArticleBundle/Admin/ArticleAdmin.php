@@ -37,11 +37,10 @@ class ArticleAdmin extends Admin{
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('titre')
-            ->add('corps', 'ckeditor')
+            ->addIdentifier('titre')
+            ->add('menu.titre', null, array('label'=>'Menu'))
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'view' => array(),
                     'edit' => array(),
                     'delete' => array(),
                 )
