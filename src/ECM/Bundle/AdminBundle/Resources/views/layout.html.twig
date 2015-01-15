@@ -1,3 +1,11 @@
 {% extends 'SonataAdminBundle::layout.html.twig' %}
 {% block body_attributes %}class="sonata-bc skin-blue fixed"{% endblock %}
 {% block side_bar_after_nav %}{% endblock %}
+{% block stylesheets %}
+
+    {% for stylesheet in admin_pool.getOption('stylesheets', []) %}
+        <link rel="stylesheet" type="text/css"  href="{{ asset(stylesheet) }}"  />
+    {% endfor %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ecmadmin/css/style.css') }}"
+
+{% endblock %}

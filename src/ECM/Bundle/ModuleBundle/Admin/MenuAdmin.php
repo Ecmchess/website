@@ -27,7 +27,7 @@ class MenuAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('titre')
-            ->add('parent.titre', null, array('label'=>'Menu parent'))
+//            ->add('parent.titre', null, array('label'=>'Menu parent'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
@@ -45,7 +45,7 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('titre')
             ->add('glyphicon')
-            ->add('parent', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
+//            ->add('parent', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
         ;
     }
 

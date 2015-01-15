@@ -45,14 +45,14 @@ class Menu extends ContainerAware{
      */
     private $articles;
 
-    /**
+    /*
      * @var integer
      *
      *
      * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", cascade={"remove"})
      * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
      */
-    private $parent;
+//    private $parent;
 
 
     public function __construct(){
