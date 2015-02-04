@@ -11,6 +11,9 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="menu_parent_id")
+ * @ORM\DiscriminatorMap({"menu" = "Menu", "submenu" = "SubMenu"})
  */
 class Menu extends ContainerAware{
     /**
@@ -71,6 +74,16 @@ class Menu extends ContainerAware{
     }
 
     /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
      * Set titre
      *
      * @param string $titre
@@ -79,21 +92,19 @@ class Menu extends ContainerAware{
     public function setTitre($titre)
     {
         $this->titre = $titre;
-    
+
         return $this;
     }
 
     /**
-     * Get titre
+     * Get glyphicon
      *
-     * @return string 
+     * @return string
      */
-    public function getTitre()
+    public function getGlyphicon()
     {
-        return $this->titre;
+        return $this->glyphicon;
     }
-
-
 
     /**
      * Set glyphicon
@@ -104,21 +115,9 @@ class Menu extends ContainerAware{
     public function setGlyphicon($glyphicon)
     {
         $this->glyphicon = $glyphicon;
-    
+
         return $this;
     }
-
-    /**
-     * Get glyphicon
-     *
-     * @return string 
-     */
-    public function getGlyphicon()
-    {
-        return $this->glyphicon;
-    }
-
-   
 
     /**
      * Add articles
