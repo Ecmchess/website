@@ -5,17 +5,15 @@ namespace ECM\Bundle\ArticleBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
-use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCR;
-
 /**
  * Article
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")/**
- * @PHPCR\Document(referenceable=true)
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")
  */
 class Article implements RouteReferrersReadInterface
 {
+    protected $routes;
     /**
      * @var integer
      *
@@ -24,23 +22,19 @@ class Article implements RouteReferrersReadInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="titre", type="text")
      *
-     * @PHPCR\Nodename()
      */
     private $titre;
-
     /**
      * @var string
      *
      * @ORM\Column(name="corps", type="text")
      */
     private $corps;
-
     /**
      * @var string
      *
@@ -49,9 +43,6 @@ class Article implements RouteReferrersReadInterface
      * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
      */
     private $menu;
-
-
-    protected $routes;
 
     public function getRoutes()
     {
@@ -70,6 +61,16 @@ class Article implements RouteReferrersReadInterface
     }
 
     /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
      * Set titre
      *
      * @param string $titre
@@ -78,18 +79,18 @@ class Article implements RouteReferrersReadInterface
     public function setTitre($titre)
     {
         $this->titre = $titre;
-    
+
         return $this;
     }
 
     /**
-     * Get titre
+     * Get corps
      *
-     * @return string 
+     * @return string
      */
-    public function getTitre()
+    public function getCorps()
     {
-        return $this->titre;
+        return $this->corps;
     }
 
     /**
@@ -101,22 +102,19 @@ class Article implements RouteReferrersReadInterface
     public function setCorps($corps)
     {
         $this->corps = $corps;
-    
+
         return $this;
     }
 
     /**
-     * Get corps
+     * Get menu
      *
-     * @return string 
+     * @return \ECM\Bundle\ModuleBundle\Entity\Menu
      */
-    public function getCorps()
+    public function getMenu()
     {
-        return $this->corps;
+        return $this->menu;
     }
-
-
-  
 
     /**
      * Set menu
@@ -127,18 +125,8 @@ class Article implements RouteReferrersReadInterface
     public function setMenu(\ECM\Bundle\ModuleBundle\Entity\Menu $menu = null)
     {
         $this->menu = $menu;
-    
-        return $this;
-    }
 
-    /**
-     * Get menu
-     *
-     * @return \ECM\Bundle\ModuleBundle\Entity\Menu 
-     */
-    public function getMenu()
-    {
-        return $this->menu;
+        return $this;
     }
 
 

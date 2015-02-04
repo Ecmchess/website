@@ -77,26 +77,25 @@ doctrine:
 #            ApplicationSonataPageBundle: ~ # only once the ApplicationSonataPageBundle is generated
 #            SonataPageBundle: ~
 
-doctrine_phpcr:
-    session:
-        backend:
-            type: doctrinedbal
-            # requires DoctrineCacheBundle
-            # caches:
-            #     meta: doctrine_cache.providers.phpcr_meta
-            #     nodes: doctrine_cache.providers.phpcr_nodes
-            # enable logging
-            logging: true
-            # enable profiling in the debug toolbar.
-            profiling: true
-        workspace: default
-        username: admin
-        password: admin
-
-    odm:
-        auto_mapping: true
-        auto_generate_proxy_classes: "%kernel.debug%"
-
+#doctrine_phpcr:
+#    session:
+#        backend:
+#            type: doctrinedbal
+#            # requires DoctrineCacheBundle
+#            # caches:
+#            #     meta: doctrine_cache.providers.phpcr_meta
+#            #     nodes: doctrine_cache.providers.phpcr_nodes
+#            # enable logging
+#            logging: true
+#            # enable profiling in the debug toolbar.
+#            profiling: true
+#        workspace: default
+#        username: admin
+#        password: admin
+#
+#    odm:
+#        auto_mapping: true
+#        auto_generate_proxy_classes: "%kernel.debug%"
 
 
 
@@ -242,11 +241,7 @@ sonata_formatter:
             service: sonata.formatter.text.twigengine
             extensions: [] # Twig formatter cannot have extensions
 
-# Symfony CMF Configuration
-cmf_core:
-    persistence:
-        phpcr:
-            enabled: true
+
 #Stof
 stof_doctrine_extensions:
     default_locale: en_US
@@ -255,22 +250,6 @@ stof_doctrine_extensions:
             tree: true
             sortable: true
 
-# Symfony CMF Auto-Routing Configuration
-cmf_routing:
-    chain:
-        routers_by_id:
-            cmf_routing.dynamic_router: 20
-            router.default: 100
-    dynamic:
-        enabled: true
-        persistence:
-            phpcr: true
-
-
-cmf_routing_auto:
-    persistence:
-        phpcr:
-            enabled: true
 
 
 #

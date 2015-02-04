@@ -1,7 +1,7 @@
 <?php
 
-use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel;
 
 class AppKernel extends Kernel {
 
@@ -15,11 +15,10 @@ class AppKernel extends Kernel {
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle,
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+//            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
-            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+//            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
             //Bundles internes ECM ----------------------------------------
             new ECM\Bundle\HomeBundle\ECMHomeBundle(),
             new ECM\Bundle\UserBundle\ECMUserBundle(),
