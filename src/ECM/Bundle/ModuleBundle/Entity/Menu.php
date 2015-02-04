@@ -12,7 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
  */
-class Menu extends ContainerAware{
+class Menu extends ContainerAware {
+
     /**
      * @var integer
      *
@@ -28,8 +29,6 @@ class Menu extends ContainerAware{
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
-
 
     /**
      * @var string
@@ -52,21 +51,20 @@ class Menu extends ContainerAware{
      * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", cascade={"remove"})
      * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
      */
+
 //    private $parent;
 
 
-    public function __construct(){
+    public function __construct() {
         $this->articles = new ArrayCollection();
     }
-
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -76,10 +74,9 @@ class Menu extends ContainerAware{
      * @param string $titre
      * @return Menu
      */
-    public function setTitre($titre)
-    {
+    public function setTitre($titre) {
         $this->titre = $titre;
-    
+
         return $this;
     }
 
@@ -88,12 +85,9 @@ class Menu extends ContainerAware{
      *
      * @return string 
      */
-    public function getTitre()
-    {
+    public function getTitre() {
         return $this->titre;
     }
-
-
 
     /**
      * Set glyphicon
@@ -101,10 +95,9 @@ class Menu extends ContainerAware{
      * @param string $glyphicon
      * @return Menu
      */
-    public function setGlyphicon($glyphicon)
-    {
+    public function setGlyphicon($glyphicon) {
         $this->glyphicon = $glyphicon;
-    
+
         return $this;
     }
 
@@ -113,12 +106,9 @@ class Menu extends ContainerAware{
      *
      * @return string 
      */
-    public function getGlyphicon()
-    {
+    public function getGlyphicon() {
         return $this->glyphicon;
     }
-
-   
 
     /**
      * Add articles
@@ -126,10 +116,9 @@ class Menu extends ContainerAware{
      * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
      * @return Menu
      */
-    public function addArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
-    {
+    public function addArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles) {
         $this->articles[] = $articles;
-    
+
         return $this;
     }
 
@@ -138,8 +127,7 @@ class Menu extends ContainerAware{
      *
      * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
      */
-    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
-    {
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles) {
         $this->articles->removeElement($articles);
     }
 
@@ -148,8 +136,7 @@ class Menu extends ContainerAware{
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getArticles()
-    {
+    public function getArticles() {
         return $this->articles;
     }
 
@@ -159,10 +146,9 @@ class Menu extends ContainerAware{
      * @param \ECM\Bundle\ModuleBundle\Entity\Menu $parent
      * @return Menu
      */
-    public function setParent(\ECM\Bundle\ModuleBundle\Entity\Menu $parent = null)
-    {
+    public function setParent(\ECM\Bundle\ModuleBundle\Entity\Menu $parent = null) {
         $this->parent = $parent;
-    
+
         return $this;
     }
 
@@ -171,8 +157,12 @@ class Menu extends ContainerAware{
      *
      * @return \ECM\Bundle\ModuleBundle\Entity\Menu 
      */
-    public function getParent()
-    {
+    public function getParent() {
         return $this->parent;
     }
+
+    public function __toString() {
+        return $this->titre;
+    }
+
 }

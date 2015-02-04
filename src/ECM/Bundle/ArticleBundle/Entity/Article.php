@@ -44,6 +44,32 @@ class Article implements RouteReferrersReadInterface
      */
     private $menu;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="accepte", type="boolean")
+     */
+    private $accepte;
+    
+    /**
+     * @var int
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="ECM\Bundle\UserBundle\Entity\User", inversedBy="articles")
+     * @ORM\JoinColumn(name="auteur_id", referencedColumnName="id")
+     */
+    private $auteur;
+    /**
+     * Get auteur
+     *
+     * @return \ECM\Bundle\UserBundle\Entity\User
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
+    }
+ 
+
     public function getRoutes()
     {
         return $this->routes;
@@ -92,6 +118,19 @@ class Article implements RouteReferrersReadInterface
     {
         return $this->corps;
     }
+    
+    
+     /**
+     * Get accepte
+     *
+     * @return boolean
+     */
+    public function getAccepte()
+    {
+        return $this->accepte;
+    }
+    
+    
 
     /**
      * Set corps
@@ -128,7 +167,11 @@ class Article implements RouteReferrersReadInterface
 
         return $this;
     }
-
+    
+    
+    public function __construct() {
+        $this->accepte = FALSE;
+    }
 
 
 }
