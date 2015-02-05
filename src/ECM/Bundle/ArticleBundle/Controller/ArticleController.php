@@ -30,6 +30,22 @@ class ArticleController extends Controller
         ));
     }
     /**
+     * Lists all Article entities by user.
+     *
+     */
+    public function getArticlesByUserAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user= $this->get('security.context')->getToken()->getUser()->getId();
+        
+        $entities = $em->getRepository('ECMArticleBundle:Article')->findBy(array('auteur' => $user));
+        //var_dump($entities);
+        return $this->render('ECMArticleBundle:Article:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+    
+    /**
      * Creates a new Article entity.
      *
      */
@@ -147,7 +163,7 @@ class ArticleController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Modifier'));
 
         return $form;
     }

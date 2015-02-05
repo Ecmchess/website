@@ -58,7 +58,9 @@ class Article implements RouteReferrersReadInterface
      * @ORM\ManyToOne(targetEntity="ECM\Bundle\UserBundle\Entity\User", inversedBy="articles")
      * @ORM\JoinColumn(name="auteur_id", referencedColumnName="id")
      */
-    private $auteur;
+    private $auteur;  
+   
+            
     /**
      * Get auteur
      *

@@ -1,7 +1,10 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-
+ivory_ck_editor:
+    configs:
+        config_article_simple:
+            toolbar: standard
 framework:
     #esi:             ~
     translator:      ~

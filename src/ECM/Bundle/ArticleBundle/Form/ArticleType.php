@@ -16,7 +16,7 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('corps')
+            ->add('corps', 'ckeditor',array('config_name' => 'config_article_simple'))
             ->add('menu','entity',array(
             'class' => 'ECM\Bundle\ModuleBundle\Entity\Menu',
             'property' => 'titre',
