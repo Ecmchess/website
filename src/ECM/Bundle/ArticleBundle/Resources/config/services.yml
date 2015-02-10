@@ -32,4 +32,16 @@ services:
             - ~
             - ECM\Bundle\ArticleBundle\Entity\Article
             - ~
+            
+    sonata.admin.articleUser:
+        class: ECM\Bundle\ArticleBundle\Admin\ArticleAdminUser
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: "Contenu"
+              label: "Articles Utilisateur"
+        arguments:
+            - ~
+            - ECM\Bundle\ArticleBundle\Entity\Article
+            - ~  
 

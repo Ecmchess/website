@@ -43,6 +43,8 @@ article_create:
 article_edit:
     path:      ecm/article/{id}/edit
     defaults: { _controller: "ECMArticleBundle:Article:edit" }
+    
+   
 
 article_update:
     path:      ecm/article/{id}/update
@@ -54,6 +56,37 @@ article_delete:
     defaults: { _controller: "ECMArticleBundle:Article:delete" }
     requirements: { _method: post|delete }
     
+    
+article_user:
+    path:     /ecm/article_user
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:index" }
 
+article_show_user:
+    path:      ecm/article_user/{id}/show
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:show" }
+
+article_new_user:
+    path:      ecm/article_user/new
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:new" }
+
+article_create_user:
+    path:      ecm/article_user/create
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:create" }
+    requirements: { _method: post }
+
+article_update_user:
+    path:      ecm/article_user/{id}/update
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:update" }
+    requirements: { _method: post|put }
+
+article_delete_user:
+    path:      ecm/article_user/{id}/delete
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:delete" }
+    requirements: { _method: post|delete }
+        
+    
+article_edit_user:
+    path:      ecm/article_user/{id}/edit
+    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:edit" } 
 
       

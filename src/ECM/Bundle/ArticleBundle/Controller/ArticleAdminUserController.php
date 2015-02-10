@@ -7,15 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use ECM\Bundle\ArticleBundle\Entity\Article;
 use ECM\Bundle\ArticleBundle\Form\ArticleType;
-
 /**
- * Article controller.
+ * Description of ArticleAdminControllerUser
  *
+ * @author hoquyb
  */
-class ArticleController extends Controller
-{
-
-    /**
+class ArticleAdminUserController extends Controller {
+     /**
      * Lists all Article entities.
      *
      */
@@ -80,7 +78,7 @@ class ArticleController extends Controller
     private function createCreateForm(Article $entity)
     {
         $form = $this->createForm(new ArticleType(), $entity, array(
-            'action' => $this->generateUrl('article_create'),
+            'action' => $this->generateUrl('article_create_user'),
             'method' => 'POST',
         ));
 
@@ -160,7 +158,7 @@ class ArticleController extends Controller
     private function createEditForm(Article $entity)
     {
         $form = $this->createForm(new ArticleType(), $entity, array(
-            'action' => $this->generateUrl('article_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('article_update_user', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -189,7 +187,7 @@ class ArticleController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('article_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('article_edit_user', array('id' => $id)));
         }
 
         return $this->render('ECMArticleBundle:Article:edit.html.twig', array(
@@ -219,7 +217,7 @@ class ArticleController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('article'));
+        return $this->redirect($this->generateUrl('article_user'));
     }
 
     /**
@@ -232,7 +230,7 @@ class ArticleController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('article_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('article_delete_user', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

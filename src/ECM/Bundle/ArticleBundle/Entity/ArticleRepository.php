@@ -32,6 +32,7 @@ class ArticleRepository extends EntityRepository {
                 ->getQuery();
 
         return $query->getResult();
+        
     }
 
 }
