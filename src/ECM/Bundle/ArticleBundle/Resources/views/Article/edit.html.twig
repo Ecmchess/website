@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'ECMHomeBundle::layout.html.twig' %}
 
 {% block body -%}
     <h1>Article edit</h1>
@@ -6,11 +6,16 @@
     {{ form(edit_form) }}
 
     <ul class="record_actions">
+
         <li>
-            <a href="{{ path('article') }}">
-                Back to the list
+            <a href="{{ path('ecm_articles_show_by_util') }}">
+                Retourner à la liste d'articles
             </a>
         </li>
-        <li>{{ form(delete_form) }}</li>
+        <li>
+            <a href="{{ path('article_delete', { 'id': entity.id }) }}">
+                Supprimer
+            </a>
+        </li>
     </ul>
 {% endblock %}

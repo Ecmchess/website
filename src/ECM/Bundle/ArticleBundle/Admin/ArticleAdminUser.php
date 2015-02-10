@@ -15,20 +15,20 @@ use Sonata\AdminBundle\Form\FormMapper;
 use ECM\Bundle\ArticleBundle\Entity\Article;
 
 /**
- * Description of ArticleAdmin
+ * Description of ArticleAdminUser
  *
  * @author hoquyb
  */
-class ArticleAdmin extends Admin{
+class ArticleAdminUser extends Admin{
     
-    protected $baseRouteName = 'sonata_article';
-    protected $baseRoutePattern = 'article';
+    protected $baseRouteName = 'sonata_article_user';
+    protected $baseRoutePattern = 'article_user';
     
     
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-           // ->add('accepte','choice', array('choices'=>array('2' => 'accepter','3' => 'refuser')))
+            ->add('accepte','choice', array('choices'=>array('2' => 'accepter','3' => 'refuser')))
             ->add('titre')
             ->add('corps', 'ckeditor')
             ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
@@ -40,7 +40,7 @@ class ArticleAdmin extends Admin{
         $listMapper
             ->addIdentifier('titre')
             ->add('menu.titre', null, array('label'=>'Menu'))
-           // ->add('accepte',null,array('label'=>'Etat'))
+            ->add('accepte',null,array('label'=>'Etat'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
