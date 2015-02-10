@@ -2,9 +2,8 @@
 
 namespace ECM\Bundle\ArticleBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use ECM\Bundle\ArticleBundle\Form\Type\ArticleType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {

@@ -27,3 +27,5 @@ services:
         arguments: [~, ECM\Bundle\ModuleBundle\Entity\Menu, ECMModuleBundle:MenuAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: Modules, label: Menus}
+        calls:
+            - [setSubClasses, [{ Menu:"ECM\Bundle\ModuleBundle\Entity\Menu", Sous-menu:"ECM\Bundle\ModuleBundle\Entity\SubMenu"}]]

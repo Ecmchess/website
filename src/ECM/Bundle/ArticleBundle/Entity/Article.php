@@ -47,10 +47,10 @@ class Article implements RouteReferrersReadInterface
     /**
      * @var boolean
      *
-     * @ORM\Column(name="accepte", type="boolean")
+     * @ORM\Column(name="accepte", type="integer")
      */
     private $accepte;
-    
+
     /**
      * @var int
      *
@@ -59,6 +59,12 @@ class Article implements RouteReferrersReadInterface
      * @ORM\JoinColumn(name="auteur_id", referencedColumnName="id")
      */
     private $auteur;
+
+    public function __construct()
+    {
+        $this->accepte = FALSE;
+    }
+
     /**
      * Get auteur
      *
@@ -68,18 +74,16 @@ class Article implements RouteReferrersReadInterface
     {
         return $this->auteur;
     }
- 
 
     public function getRoutes()
     {
         return $this->routes;
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -118,19 +122,6 @@ class Article implements RouteReferrersReadInterface
     {
         return $this->corps;
     }
-    
-    
-     /**
-     * Get accepte
-     *
-     * @return boolean
-     */
-    public function getAccepte()
-    {
-        return $this->accepte;
-    }
-    
-    
 
     /**
      * Set corps
@@ -143,6 +134,16 @@ class Article implements RouteReferrersReadInterface
         $this->corps = $corps;
 
         return $this;
+    }
+
+    /**
+     * Get accepte
+     *
+     * @return boolean
+     */
+    public function getAccepte()
+    {
+        return $this->accepte;
     }
 
     /**
@@ -166,11 +167,6 @@ class Article implements RouteReferrersReadInterface
         $this->menu = $menu;
 
         return $this;
-    }
-    
-    
-    public function __construct() {
-        $this->accepte = FALSE;
     }
 
 

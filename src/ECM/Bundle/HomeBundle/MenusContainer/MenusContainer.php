@@ -20,11 +20,11 @@ class MenusContainer {
     }
 
     public function getMenus(){
-        return $this->doctrine->getRepository('ECMModuleBundle:Menu')->findAll();
+        return $this->doctrine->getRepository('ECMModuleBundle:Menu')->getMenusOnly();
     }
 
     public function getSubMenus($menu){
-        return $this->doctrine->getRepository('ECMModuleBundle:Menu')->getSubMenus($menu);
+        return $menu->getEnfants();
     }
 
 } 

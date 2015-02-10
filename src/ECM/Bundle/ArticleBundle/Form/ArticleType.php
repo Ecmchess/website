@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ArticleType extends AbstractType
 {
-        /**
+    /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
@@ -17,14 +17,13 @@ class ArticleType extends AbstractType
         $builder
             ->add('titre')
             ->add('corps')
-            ->add('menu','entity',array(
-            'class' => 'ECM\Bundle\ModuleBundle\Entity\Menu',
-            'property' => 'titre',
-            'multiple' => false,
-            'required' => true))
-        ;
+            ->add('menu', 'entity', array(
+                'class' => 'ECM\Bundle\ModuleBundle\Entity\Menu',
+                'property' => 'titre',
+                'multiple' => false,
+                'required' => true));
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

@@ -9,9 +9,8 @@
 namespace ECM\Bundle\HomeBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
-use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 class MenuBuilder extends ContainerAware {
 
@@ -23,53 +22,11 @@ class MenuBuilder extends ContainerAware {
         $this->serviceContainer = $container;
     }
 
-    public function createMainMenu (){
-        $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav navbar-nav');
-
-        $menu->addChild('', array('route' => 'ecm_home_homepage'))
-            ->setAttribute('glyphicon', 'home');
-
-//        $menu->addChild('User')
-//            ->setAttribute('dropdown', true);
-//
-//        $menu['User']->addChild('Profile', array('uri' => '#'))
-//            ->setAttribute('divider_append', true);
-//        $menu['User']->addChild('Logout', array('uri' => '#'));
-//
-//        $menu->addChild('Language')
-//            ->setAttribute('dropdown', true)
-//            ->setAttribute('divider_prepend', true);
-//
-//        $menu['Language']->addChild('Deutsch', array('uri' => '#'));
-//        $menu['Language']->addChild('English', array('uri' => '#'));
-
-        $menu->addChild('Le club')
-            ->setAttribute('dropdown', true);
-//            ->setAttribute('glyphicon', 'star');
-
-        $menu['Le club']->addChild("Horaires d'ouverture", array('route' => 'ecm_home_horaires'));
-        $menu['Le club']->addChild('Tarifs 2014/2015', array('route' => 'ecm_home_tarifs'));
-        $menu['Le club']->addChild('Responsables du club', array('route' => 'ecm_home_responsables'))
-            ->setAttribute('divider_append', true);
-        $menu['Le club']->addChild('Nous contacter', array('route' => 'ecm_home_contact'));
-
-       
-        
-        $menu->addChild('Equipes jeunes', array('uri' => '#'));
-        $menu->addChild('Cours', array('uri' => '#'))
-            ->setAttribute('glyphicon', 'book');
-        $menu->addChild('Interclub adultes', array('uri' => '#'))
-            ->setAttribute('glyphicon', 'tower');
-        $menu->addChild('Galerie photo', array('uri' => '#'))
-            ->setAttribute('glyphicon', 'camera');
-
-        
-
-        return $menu;
-    }
-    
-     public function createAdminMenu (){
+    /*
+     * Menu administrateur
+     */
+    public function createAdminMenu()
+    {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
@@ -77,19 +34,24 @@ class MenuBuilder extends ContainerAware {
             ->setAttribute('glyphicon', 'lock');
         return $menu;
     }
-    
+
+    /*
+     * Menu utilisateur (administrateur inclus)
+     */
     public function createUserMenu (){
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
          $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
             ->setAttribute('glyphicon', 'off');
-         $menu->addChild('Proposer article', array('route' => 'article_new'))
-            ;
+        $menu->addChild('Proposer article', array('route' => 'article_new'));
         
         return $menu;
     }
-    
+
+    /*
+     * Menu utilisateur non enregistré
+     */
     public function createAnonymousMenu (){
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
@@ -98,12 +60,14 @@ class MenuBuilder extends ContainerAware {
             ->setAttribute('glyphicon', 'off');
         $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
             ->setAttribute('glyphicon', 'pencil');
-        
+
         $menu['Connexion']->setAttribute('class', 'navbar-right');
         return $menu;
     }
 
-
+    /*
+     * Menu général à tous les internautes
+     */
     public function generateMenu(){
 
         $menu = $this->factory->createItem('root');
@@ -114,17 +78,11 @@ class MenuBuilder extends ContainerAware {
         foreach ($menus as $menuItem) {
             $slug = $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre());
             $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
-//            $subMenus = $this->serviceContainer->get('ecm_home.menus.container')->getSubMenus($menuItem);
-//            if($subMenus != null){
-//                $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
-//                $menu[$menuItem->getTitre()]->setAttribute('dropdown', true);
-//                foreach( $subMenus as $subMenuItem){
-//                    $menu[$menuItem->getTitre()]->addChild($subMenuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
-//                }
-//            } else {
-//                $menu->addChild($menuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $slug)));
-//            }
-//            $menu->addChild($menuItem->getTitre(), array('uri' => $this->serviceContainer->get('slugify')->slugify($menuItem->getTitre())));
+            foreach ($menuItem->getEnfants() as $submenuItem) {
+                $menu[$menuItem->getTitre()]->setAttribute('dropdown', true);
+                $subSlug = $this->serviceContainer->get('slugify')->slugify($submenuItem->getTitre());
+                $menu[$menuItem->getTitre()]->addChild($submenuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $subSlug)));
+            }
         }
 
         return $menu;

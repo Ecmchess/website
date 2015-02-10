@@ -11,12 +11,25 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
- * @ORM\InheritanceType("SINGLE_TABLE")
- * @ORM\DiscriminatorColumn(name="menu_parent_id")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({"menu" = "Menu", "submenu" = "SubMenu"})
  */
-class Menu extends ContainerAware {
+class Menu extends ContainerAware
+{
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=255, unique=true)
+     */
+    protected $titre;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="glyphicon", type="string", length=255, nullable=true)
+     */
+    protected $glyphicon;
     /**
      * @var integer
      *
@@ -25,23 +38,6 @@ class Menu extends ContainerAware {
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="titre", type="string", length=255)
-     */
-    private $titre;
-
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="glyphicon", type="string", length=255, nullable=true)
-     */
-    private $glyphicon;
-
     /**
      * @var
      *
@@ -49,18 +45,16 @@ class Menu extends ContainerAware {
      */
     private $articles;
 
-    /*
+    /**
      * @var integer
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", cascade={"remove"})
-     * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="ECM\Bundle\ModuleBundle\Entity\SubMenu", mappedBy="parent", cascade={"remove"})
      */
-//    private $parent;
+    private $enfants;
 
 
     public function __construct(){
         $this->articles = new ArrayCollection();
+        $this->enfants = new ArrayCollection();
     }
 
 
@@ -75,6 +69,16 @@ class Menu extends ContainerAware {
     }
 
     /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
      * Set titre
      *
      * @param string $titre
@@ -83,21 +87,19 @@ class Menu extends ContainerAware {
     public function setTitre($titre)
     {
         $this->titre = $titre;
-    
+
         return $this;
     }
 
     /**
-     * Get titre
+     * Get glyphicon
      *
-     * @return string 
+     * @return string
      */
-    public function getTitre()
+    public function getGlyphicon()
     {
-        return $this->titre;
+        return $this->glyphicon;
     }
-
-
 
     /**
      * Set glyphicon
@@ -108,17 +110,8 @@ class Menu extends ContainerAware {
     public function setGlyphicon($glyphicon)
     {
         $this->glyphicon = $glyphicon;
-    
-        return $this;
-    }
 
-    /**
-     * Get glyphicon
-     *
-     * @return string 
-     */
-    public function getGlyphicon() {
-        return $this->glyphicon;
+        return $this;
     }
 
     /**
@@ -139,7 +132,8 @@ class Menu extends ContainerAware {
      *
      * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
      */
-    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles) {
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
+    {
         $this->articles->removeElement($articles);
     }
 
@@ -148,33 +142,48 @@ class Menu extends ContainerAware {
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getArticles() {
+    public function getArticles()
+    {
         return $this->articles;
     }
 
+
+    public function __toString()
+    {
+        return $this->titre;
+    }
+
+
     /**
-     * Set parent
+     * Add enfants
      *
-     * @param \ECM\Bundle\ModuleBundle\Entity\Menu $parent
+     * @param \ECM\Bundle\ModuleBundle\Entity\SubMenu $enfants
      * @return Menu
      */
-    public function setParent(\ECM\Bundle\ModuleBundle\Entity\Menu $parent = null) {
-        $this->parent = $parent;
-
+    public function addEnfant(\ECM\Bundle\ModuleBundle\Entity\SubMenu $enfants)
+    {
+        $this->enfants[] = $enfants;
+    
         return $this;
     }
 
     /**
-     * Get parent
+     * Remove enfants
      *
-     * @return \ECM\Bundle\ModuleBundle\Entity\Menu 
+     * @param \ECM\Bundle\ModuleBundle\Entity\SubMenu $enfants
      */
-    public function getParent() {
-        return $this->parent;
+    public function removeEnfant(\ECM\Bundle\ModuleBundle\Entity\SubMenu $enfants)
+    {
+        $this->enfants->removeElement($enfants);
     }
 
-    public function __toString() {
-        return $this->titre;
+    /**
+     * Get enfants
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEnfants()
+    {
+        return $this->enfants;
     }
-
 }

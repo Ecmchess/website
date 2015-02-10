@@ -14,25 +14,19 @@ class MenuRepository extends EntityRepository
 {
 
     public function getSubMenus($menuParent){
-//        $result = $this->createQueryBuilder('m')
-//            ->from('ECMModuleBundle:Menu', 'menu')
-//            ->where('parent = :parent')
-//            ->setParameter('parent', $menuParent)
-//            ->getQuery()
-//            ->getResult();
-//        return $result;
-
         return $this->getEntityManager()
             ->createQuery('SELECT m FROM ECMModuleBundle:Menu m WHERE m.parent = :parent')
             ->setParameter('parent', $menuParent)
         ->getResult();
     }
 
-//    public function hasSubMenus($menu){
-//        $this->getEntityManager()
-//            ->createQuery('SELECT m FROM ECMModuleBundle:Menu WHERE parent = :parent')
-//            ->setParameter('parent', $menu)
-//            ->getResult();
-//    }
+    public function getMenusOnly()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT m FROM ECMModuleBundle:Menu m WHERE NOT m INSTANCE OF ECMModuleBundle:SubMenu')
+            ->getResult();
+    }
+
+
 
 }
