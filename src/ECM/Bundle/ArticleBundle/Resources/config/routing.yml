@@ -7,6 +7,11 @@
 ecm_articles_show_by_menu:
     path: /ecm/{titreMenu}
     defaults: { _controller: ECMArticleBundle:Default:showArticlesByMenu }
+    
+    
+#article_create:
+#    path: /ecm/AjoutArticle
+#    defaults: { _controller: ECMArticleBundle:Article:newAction }
 
 
 #ecm_article_admin_modifier:
@@ -14,3 +19,38 @@ ecm_articles_show_by_menu:
 #    defaults: { _controller: ECMArticleBundle:Default:modifier }
 #    requirements:
 #        format: /d+
+
+article:
+    path:     /ecm/article
+    defaults: { _controller: "ECMArticleBundle:Article:index" }
+
+article_show:
+    path:      ecm/article/{id}/show
+    defaults: { _controller: "ECMArticleBundle:Article:show" }
+
+article_new:
+    path:      ecm/article/new
+    defaults: { _controller: "ECMArticleBundle:Article:new" }
+
+article_create:
+    path:      ecm/article/create
+    defaults: { _controller: "ECMArticleBundle:Article:create" }
+    requirements: { _method: post }
+
+article_edit:
+    path:      ecm/article/{id}/edit
+    defaults: { _controller: "ECMArticleBundle:Article:edit" }
+
+article_update:
+    path:      ecm/article/{id}/update
+    defaults: { _controller: "ECMArticleBundle:Article:update" }
+    requirements: { _method: post|put }
+
+article_delete:
+    path:      ecm/article/{id}/delete
+    defaults: { _controller: "ECMArticleBundle:Article:delete" }
+    requirements: { _method: post|delete }
+    
+
+
+      

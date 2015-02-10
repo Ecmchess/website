@@ -11,8 +11,12 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ModuleBundle\Entity\MenuRepository")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\DiscriminatorMap({"menu" = "Menu", "submenu" = "SubMenu"})
  */
-class Menu extends ContainerAware{
+class Menu extends ContainerAware {
+
     /**
      * @var integer
      *
@@ -27,7 +31,7 @@ class Menu extends ContainerAware{
      *
      * @ORM\Column(name="titre", type="string", length=255)
      */
-    private $titre;
+    protected $titre;
 
 
 
@@ -36,7 +40,7 @@ class Menu extends ContainerAware{
      *
      * @ORM\Column(name="glyphicon", type="string", length=255, nullable=true)
      */
-    private $glyphicon;
+    protected $glyphicon;
 
     /**
      * @var
@@ -47,16 +51,14 @@ class Menu extends ContainerAware{
 
     /**
      * @var integer
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="menu", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="menu_parent_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="ECM\Bundle\ModuleBundle\Entity\SubMenu", mappedBy="menu", cascade={"remove"})
      */
-    private $parent;
+    private $enfants;
 
 
     public function __construct(){
         $this->articles = new ArrayCollection();
+        $this->enfants = new ArrayCollection();
     }
 
 
@@ -113,12 +115,9 @@ class Menu extends ContainerAware{
      *
      * @return string 
      */
-    public function getGlyphicon()
-    {
+    public function getGlyphicon() {
         return $this->glyphicon;
     }
-
-   
 
     /**
      * Add articles
@@ -138,8 +137,7 @@ class Menu extends ContainerAware{
      *
      * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
      */
-    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
-    {
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles) {
         $this->articles->removeElement($articles);
     }
 
@@ -148,17 +146,14 @@ class Menu extends ContainerAware{
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getArticles()
-    {
+    public function getArticles() {
         return $this->articles;
     }
 
 
 
-
-
-
-
-
+    public function __toString(){
+        return $this->titre;
+    }
 
 }

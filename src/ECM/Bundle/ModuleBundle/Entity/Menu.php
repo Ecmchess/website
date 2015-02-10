@@ -15,7 +15,8 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  * @ORM\DiscriminatorColumn(name="menu_parent_id")
  * @ORM\DiscriminatorMap({"menu" = "Menu", "submenu" = "SubMenu"})
  */
-class Menu extends ContainerAware{
+class Menu extends ContainerAware {
+
     /**
      * @var integer
      *
@@ -74,16 +75,6 @@ class Menu extends ContainerAware{
     }
 
     /**
-     * Get titre
-     *
-     * @return string
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
-
-    /**
      * Set titre
      *
      * @param string $titre
@@ -92,19 +83,21 @@ class Menu extends ContainerAware{
     public function setTitre($titre)
     {
         $this->titre = $titre;
-
+    
         return $this;
     }
 
     /**
-     * Get glyphicon
+     * Get titre
      *
-     * @return string
+     * @return string 
      */
-    public function getGlyphicon()
+    public function getTitre()
     {
-        return $this->glyphicon;
+        return $this->titre;
     }
+
+
 
     /**
      * Set glyphicon
@@ -115,8 +108,17 @@ class Menu extends ContainerAware{
     public function setGlyphicon($glyphicon)
     {
         $this->glyphicon = $glyphicon;
-
+    
         return $this;
+    }
+
+    /**
+     * Get glyphicon
+     *
+     * @return string 
+     */
+    public function getGlyphicon() {
+        return $this->glyphicon;
     }
 
     /**
@@ -137,8 +139,7 @@ class Menu extends ContainerAware{
      *
      * @param \ECM\Bundle\ArticleBundle\Entity\Article $articles
      */
-    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles)
-    {
+    public function removeArticle(\ECM\Bundle\ArticleBundle\Entity\Article $articles) {
         $this->articles->removeElement($articles);
     }
 
@@ -147,8 +148,7 @@ class Menu extends ContainerAware{
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getArticles()
-    {
+    public function getArticles() {
         return $this->articles;
     }
 
@@ -158,10 +158,9 @@ class Menu extends ContainerAware{
      * @param \ECM\Bundle\ModuleBundle\Entity\Menu $parent
      * @return Menu
      */
-    public function setParent(\ECM\Bundle\ModuleBundle\Entity\Menu $parent = null)
-    {
+    public function setParent(\ECM\Bundle\ModuleBundle\Entity\Menu $parent = null) {
         $this->parent = $parent;
-    
+
         return $this;
     }
 
@@ -170,8 +169,12 @@ class Menu extends ContainerAware{
      *
      * @return \ECM\Bundle\ModuleBundle\Entity\Menu 
      */
-    public function getParent()
-    {
+    public function getParent() {
         return $this->parent;
     }
+
+    public function __toString() {
+        return $this->titre;
+    }
+
 }
