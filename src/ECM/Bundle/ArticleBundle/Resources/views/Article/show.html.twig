@@ -5,33 +5,33 @@
 
     <table class="table table-striped">
         <tbody>
-            <tr>
-                <th>Titre</th>
-                <td>{{ entity.titre }}</td>
-            </tr>
-            <tr>
-                <th>Corps</th>
-                <td>{{ entity.corps | raw }}</td>
-            </tr>
-            
+        <tr>
+            <th>Titre</th>
+            <td>{{ entity.titre }}</td>
+        </tr>
+        <tr>
+            <th>Corps</th>
+            <td>{{ entity.corps | raw }}</td>
+        </tr>
+
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ecm_articles_show_by_util') }}">
-            Retourner à la liste d'article
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('article_edit', { 'id': entity.id }) }}">
-            Modifier
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('article_delete', { 'id': entity.id }) }}">
-            Supprimer
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('ecm_articles_show_by_util') }}">
+                Retourner à la liste d'article
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('article_edit', { 'id': entity.id }) }}">
+                Modifier
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('article_delete', { 'id': entity.id }) }}">
+                Supprimer
+            </a>
+        </li>
+    </ul>
 {% endblock %}

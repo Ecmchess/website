@@ -11,11 +11,15 @@ namespace ECM\Bundle\ArticleBundle\Entity;
  *
  * @author lacombes
  */
-class ArticleValide extends ArticleEtat{
-    public function editer($article) {
+class ArticleValide extends ArticleEtat
+{
+    public function editer($article)
+    {
         $article->accepte = new ArticleEnAttenteDeValidation();
     }
-    public function __toString() {
+
+    public function __toString()
+    {
         return 'Validé';
     }
 }

@@ -4,25 +4,30 @@ namespace ECM\Bundle\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
-//use ECM\Bundle\ArticleBundle\Entity\ArticleEtat;
 use Symfony\Component\DependencyInjection\ContainerAware;
+
+//use ECM\Bundle\ArticleBundle\Entity\ArticleEtat;
 /**
  * Article
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")
  */
-class Article extends ContainerAware implements RouteReferrersReadInterface{
+class Article extends ContainerAware implements RouteReferrersReadInterface
+{
 
-    private $user;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="accepte", type="integer")
+     */
+    public $accepte;
     protected $routes;
-    
+    private $user;
     /**
      * @var ArticleEtat
      */
     private $etatArticle;
-   
-
     /**
      * @var integer
      *
@@ -31,7 +36,6 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
@@ -39,14 +43,12 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
      *
      */
     private $titre;
-
     /**
      * @var string
      *
      * @ORM\Column(name="corps", type="text")
      */
     private $corps;
-
     /**
      * @var string
      *
@@ -55,14 +57,6 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
      * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
      */
     private $menu;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="accepte", type="integer")
-     */
-    public $accepte;
-
     /**
      * @var int
      *
@@ -72,26 +66,40 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
      */
     private $auteur;
 
+    public function __construct()
+    {
+        //$this->accepte = FALSE;
+        //$this->accepte = new ArticleEnAttenteDeValidation();
+        $this->etatArticle = new ArticleEnAttenteDeValidation();
+        $this->accepte = 1;
+        //$this->auteur = $this->container->get('security.context')->getToken()->getUser()->getId();
+
+    }
+
     /**
      * Get auteur
      *
      * @return \ECM\Bundle\UserBundle\Entity\User
      */
-    public function getAuteur() {
+    public function getAuteur()
+    {
         return $this->auteur;
     }
- 
+
+    public function setAuteur($auteur)
+    {
+        $this->auteur = $auteur;
+    }
 
     public function getRoutes()
     {
         return $this->routes;
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -132,11 +140,25 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
     }
 
     /**
+     * Set corps
+     *
+     * @param string $corps
+     * @return Article
+     */
+    public function setCorps($corps)
+    {
+        $this->corps = $corps;
+
+        return $this;
+    }
+
+    /**
      * Get accepte
      *
      * @return ArticleEtat
      */
-    public function getAccepte() {
+    public function getAccepte()
+    {
         switch ($this->accepte) {
             case 1:
                 $this->etatArticle = new ArticleEnAttenteDeValidation();
@@ -156,22 +178,6 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
     }
 
     /**
-     * Set corps
-     *
-     * @param string $corps
-     * @return Article
-     */
-    public function setCorps($corps)
-    {
-        $this->corps = $corps;
-
-        return $this;
-    }
-    public function setAuteur($auteur){
-        $this->auteur=$auteur;
-    }
-
-    /**
      * Get menu
      *
      * @return \ECM\Bundle\ModuleBundle\Entity\Menu
@@ -187,42 +193,39 @@ class Article extends ContainerAware implements RouteReferrersReadInterface{
      * @param \ECM\Bundle\ModuleBundle\Entity\Menu $menu
      * @return Article
      */
-    public function setMenu(\ECM\Bundle\ModuleBundle\Entity\Menu $menu = null) {
+    public function setMenu(\ECM\Bundle\ModuleBundle\Entity\Menu $menu = null)
+    {
         $this->menu = $menu;
 
         return $this;
     }
 
-    public function setArticleState($ArticleEtat_In) {
+    public function setArticleState($ArticleEtat_In)
+    {
         $this->etatArticle = $ArticleEtat_In;
     }
 
-    public function valider() {
+    public function valider()
+    {
         $this->etatArticle->valider($this);
         $this->accepte = 2;
     }
 
-    public function refuser() {
+    public function refuser()
+    {
         $this->etatArticle->refuser($this);
         $this->accepte = 3;
     }
 
-    public function editer() {
+    public function editer()
+    {
         $this->etatArticle->editer($this);
         $this->accepte = 1;
     }
 
-    public function getArticleEtat() {
+    public function getArticleEtat()
+    {
         return $this->etatArticle;
-    }
-
-    public function __construct() {
-        //$this->accepte = FALSE;
-        //$this->accepte = new ArticleEnAttenteDeValidation();
-        $this->etatArticle = new ArticleEnAttenteDeValidation();
-        $this->accepte = 1;
-        //$this->auteur = $this->container->get('security.context')->getToken()->getUser()->getId();
-        
     }
     
 

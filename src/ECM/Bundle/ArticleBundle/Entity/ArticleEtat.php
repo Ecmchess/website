@@ -11,8 +11,17 @@ namespace ECM\Bundle\ArticleBundle\Entity;
  *
  * @author lacombes
  */
-abstract class ArticleEtat {
-    public function valider($article){}
-    public function refuser($article){}
-    public function editer($article){}
+abstract class ArticleEtat
+{
+    public function valider($article)
+    {
+    }
+
+    public function refuser($article)
+    {
+    }
+
+    public function editer($article)
+    {
+    }
 }

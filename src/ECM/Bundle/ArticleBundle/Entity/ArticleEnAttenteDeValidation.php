@@ -11,17 +11,23 @@ namespace ECM\Bundle\ArticleBundle\Entity;
  *
  * @author lacombes
  */
-class ArticleEnAttenteDeValidation extends ArticleEtat {
-    
-    
-    public function refuser($article) {
+class ArticleEnAttenteDeValidation extends ArticleEtat
+{
+
+
+    public function refuser($article)
+    {
         $article->accepte = new ArticleRefuse();
         //TODO mail auteur
     }
-    public function valider($article) {
+
+    public function valider($article)
+    {
         $article->accepte = new ArticleValide();
     }
-    public function __toString() {
+
+    public function __toString()
+    {
         return 'En attente de validation';
     }
 }

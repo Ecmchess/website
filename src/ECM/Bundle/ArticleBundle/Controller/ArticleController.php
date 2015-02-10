@@ -36,15 +36,15 @@ class ArticleController extends Controller
     public function getArticlesByUserAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $user= $this->get('security.context')->getToken()->getUser()->getId();
-        
+        $user = $this->get('security.context')->getToken()->getUser()->getId();
+
         $entities = $em->getRepository('ECMArticleBundle:Article')->findBy(array('auteur' => $user));
         //var_dump($entities);
         return $this->render('ECMArticleBundle:Article:index.html.twig', array(
             'entities' => $entities,
         ));
     }
-    
+
     /**
      * Creates a new Article entity.
      *

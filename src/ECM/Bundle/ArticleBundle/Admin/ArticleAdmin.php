@@ -8,11 +8,10 @@
 namespace ECM\Bundle\ArticleBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
-use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use ECM\Bundle\ArticleBundle\Entity\Article;
+use Sonata\AdminBundle\Validator\ErrorElement;
 
 /**
  * Description of ArticleAdmin
@@ -28,7 +27,7 @@ class ArticleAdmin extends Admin{
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-           // ->add('accepte','choice', array('choices'=>array('2' => 'accepter','3' => 'refuser')))
+            // ->add('accepte','choice', array('choices'=>array('2' => 'accepter','3' => 'refuser')))
             ->add('titre')
             ->add('corps', 'ckeditor')
             ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
@@ -40,13 +39,13 @@ class ArticleAdmin extends Admin{
         $listMapper
             ->addIdentifier('titre')
             ->add('menu.titre', null, array('label'=>'Menu'))
-           // ->add('accepte',null,array('label'=>'Etat'))
+            // ->add('accepte',null,array('label'=>'Etat'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
                     'delete' => array(),
                 )
-                
+
             ));
     }
 

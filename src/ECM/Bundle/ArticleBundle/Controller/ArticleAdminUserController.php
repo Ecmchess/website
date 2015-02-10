@@ -2,18 +2,19 @@
 
 namespace ECM\Bundle\ArticleBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use ECM\Bundle\ArticleBundle\Entity\Article;
 use ECM\Bundle\ArticleBundle\Form\ArticleType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 /**
  * Description of ArticleAdminControllerUser
  *
  * @author hoquyb
  */
-class ArticleAdminUserController extends Controller {
-     /**
+class ArticleAdminUserController extends Controller
+{
+    /**
      * Lists all Article entities.
      *
      */
@@ -27,6 +28,7 @@ class ArticleAdminUserController extends Controller {
             'entities' => $entities,
         ));
     }
+
     /**
      * Lists all Article entities by user.
      *
@@ -34,15 +36,15 @@ class ArticleAdminUserController extends Controller {
     public function getArticlesByUserAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $user= $this->get('security.context')->getToken()->getUser()->getId();
-        
+        $user = $this->get('security.context')->getToken()->getUser()->getId();
+
         $entities = $em->getRepository('ECMArticleBundle:Article')->findBy(array('auteur' => $user));
         //var_dump($entities);
         return $this->render('ECMArticleBundle:Article:index.html.twig', array(
             'entities' => $entities,
         ));
     }
-    
+
     /**
      * Creates a new Article entity.
      *
@@ -64,7 +66,7 @@ class ArticleAdminUserController extends Controller {
 
         return $this->render('ECMArticleBundle:Article:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -94,11 +96,11 @@ class ArticleAdminUserController extends Controller {
     public function newAction()
     {
         $entity = new Article();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('ECMArticleBundle:Article:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -119,9 +121,25 @@ class ArticleAdminUserController extends Controller {
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('ECMArticleBundle:Article:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
+    }
+
+    /**
+     * Creates a form to delete a Article entity by id.
+     *
+     * @param mixed $id The entity id
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('article_delete_user', array('id' => $id)))
+            ->setMethod('DELETE')
+            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->getForm();
     }
 
     /**
@@ -142,19 +160,19 @@ class ArticleAdminUserController extends Controller {
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('ECMArticleBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Article entity.
-    *
-    * @param Article $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Article entity.
+     *
+     * @param Article $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Article $entity)
     {
         $form = $this->createForm(new ArticleType(), $entity, array(
@@ -166,6 +184,7 @@ class ArticleAdminUserController extends Controller {
 
         return $form;
     }
+
     /**
      * Edits an existing Article entity.
      *
@@ -191,11 +210,12 @@ class ArticleAdminUserController extends Controller {
         }
 
         return $this->render('ECMArticleBundle:Article:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Article entity.
      *
@@ -218,22 +238,5 @@ class ArticleAdminUserController extends Controller {
         }
 
         return $this->redirect($this->generateUrl('article_user'));
-    }
-
-    /**
-     * Creates a form to delete a Article entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('article_delete_user', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
     }
 }

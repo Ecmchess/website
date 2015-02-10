@@ -45,6 +45,7 @@ class MenuBuilder extends ContainerAware {
          $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
             ->setAttribute('glyphicon', 'off');
         $menu->addChild('Proposer article', array('route' => 'article_new'));
+        $menu->addChild('Mes articles', array('route' => 'ecm_articles_show_by_util'));
         
         return $menu;
     }
