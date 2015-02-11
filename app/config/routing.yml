@@ -6,9 +6,6 @@ ecm_module:
     resource: "@ECMModuleBundle/Resources/config/routing.yml"
     prefix:   /
 
-ECMModuleBundle_admin_sponsor:
-    resource: "@ECMModuleBundle/Resources/config/routing/sponsor.yml"
-    prefix:   /admin/sponsor
 
 
 ecm_article:

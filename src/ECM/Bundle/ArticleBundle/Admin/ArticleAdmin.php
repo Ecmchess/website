@@ -11,6 +11,8 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Validator\ErrorElement;
 
 /**
@@ -18,28 +20,45 @@ use Sonata\AdminBundle\Validator\ErrorElement;
  *
  * @author hoquyb
  */
-class ArticleAdmin extends Admin{
-    
-    protected $baseRouteName = 'sonata_article';
-    protected $baseRoutePattern = 'article';
-    
-    
+class ArticleAdmin extends Admin
+{
+
+    protected $baseRouteName = 'sonata_publication';
+    protected $baseRoutePattern = 'publications';
+
+    public function postUpdate($article)
+    {
+        if ($article->estRefuse()) {
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Hello Email')
+                ->setFrom('ecmadmin@yopmail.com')
+                ->setTo($article->getAuteur()->getEmail())
+                ->setBody($this->getConfigurationPool()->getContainer()->get('templating')->renderResponse('ECMArticleBundle:Article:email.txt.twig'), array('article', $article));
+            $this->getConfigurationPool()->getContainer()->get('mailer')->send($message);
+        }
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->clearExcept(array('list', 'show', 'edit', 'delete'));
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            // ->add('accepte','choice', array('choices'=>array('2' => 'accepter','3' => 'refuser')))
-            ->add('titre')
+            ->add('etat', 'choice', array('choices' => array('2' => 'accepter', '3' => 'refuser'), 'expanded' => true))
+            ->add('motif')
+            ->add('titre', 'text')
             ->add('corps', 'ckeditor')
-            ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
-            ;
+            ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false));
     }
-    
+
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('titre')
-            ->add('menu.titre', null, array('label'=>'Menu'))
-            // ->add('accepte',null,array('label'=>'Etat'))
+            ->add('menu.titre', null, array('label' => 'Menu'))
+            ->add('etat', null, array('label' => 'Etat'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
@@ -49,23 +68,18 @@ class ArticleAdmin extends Admin{
             ));
     }
 
-
-
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
             ->add('titre')
-            ->add('corps')
-        ;
+            ->add('corps');
     }
 
- 
-    protected function configureShowField(ShowMapper $showMapper)
+    protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
             ->add('titre')
-            ->add('corps')
-        ;
+            ->add('corps', null, array('safe' => true));
     }
-    
+
 }

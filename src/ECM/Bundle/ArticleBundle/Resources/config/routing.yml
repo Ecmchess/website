@@ -59,34 +59,34 @@ article_delete:
     
 article_user:
     path:     /ecm/article_user
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:index" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:index" }
 
 article_show_user:
     path:      ecm/article_user/{id}/show
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:show" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:show" }
 
 article_new_user:
     path:      ecm/article_user/new
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:new" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:new" }
 
 article_create_user:
     path:      ecm/article_user/create
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:create" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:create" }
     requirements: { _method: post }
 
 article_update_user:
     path:      ecm/article_user/{id}/update
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:update" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:update" }
     requirements: { _method: post|put }
 
 article_delete_user:
     path:      ecm/article_user/{id}/delete
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:delete" }
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:delete" }
     requirements: { _method: post|delete }
         
     
 article_edit_user:
     path:      ecm/article_user/{id}/edit
-    defaults: { _controller: "ECMArticleBundle:ArticleAdminUser:edit" } 
+    defaults: { _controller: "ECMArticleBundle:ArticleAdmin:edit" }
 
       

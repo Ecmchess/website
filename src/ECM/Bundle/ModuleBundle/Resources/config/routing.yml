@@ -1,3 +1,0 @@
-ecm_module_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ECMModuleBundle:Default:index }

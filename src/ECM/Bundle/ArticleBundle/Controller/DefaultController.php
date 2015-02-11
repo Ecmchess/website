@@ -21,7 +21,7 @@ class DefaultController extends Controller {
         $mR = $this->getDoctrine()->getRepository('ECMModuleBundle:Menu');
         $titreMenu = ucfirst(preg_replace('#-#', ' ', $titreMenu));
         $menu = $mR->findOneBy(array('titre' => $titreMenu));
-        $articles = $aR->getArticlesByMenuAccepte($menu);
+        $articles = $aR->getArticlesByMenuAndByEtat($menu);
         return array('articles' => $articles, 'menu' => $titreMenu);
     }
 

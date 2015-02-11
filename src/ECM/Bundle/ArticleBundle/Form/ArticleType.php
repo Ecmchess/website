@@ -2,6 +2,7 @@
 
 namespace ECM\Bundle\ArticleBundle\Form;
 
+use ECM\Bundle\ModuleBundle\Entity\MenuRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -22,13 +23,18 @@ class ArticleType extends AbstractType
                 'class' => 'ECM\Bundle\ModuleBundle\Entity\Menu',
                 'property' => 'titre',
                 'multiple' => false,
-                'required' => true));
+                'required' => true,
+                'query_builder' => function (MenuRepository $rep) {
+                    return $rep->createQueryBuilder('m')
+                        ->leftJoin('m.enfants', 'e')
+                        ->where('m INSTANCE OF ECMModuleBundle:SubMenu');
+                }));
     }
 
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(\Symfony\Component\Form\OptionsResolverInterface $resolver)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'ECM\Bundle\ArticleBundle\Entity\Article'

@@ -3,60 +3,41 @@
 namespace ECM\Bundle\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
-use Symfony\Component\DependencyInjection\ContainerAware;
+
+//use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
 //use ECM\Bundle\ArticleBundle\Entity\ArticleEtat;
 /**
- * Article
+ * Publication
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\PublicationRepository")
+ * @ORM\HasLifecycleCallbacks
  */
-class Article extends ContainerAware implements RouteReferrersReadInterface
+class Article extends Publication
 {
 
     /**
      * @var int
      *
-     * @ORM\Column(name="accepte", type="integer")
+     * @ORM\Column(name="etat", type="integer")
      */
-    public $accepte;
-    protected $routes;
-    private $user;
-    /**
-     * @var ArticleEtat
-     */
-    private $etatArticle;
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+    public $etat;
+
+//    /**
+//     * @var ArticleEtat
+//     */
+//    private $etatArticle;
+
+
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="text")
+     * @ORM\Column(name="motif", type="text", nullable=true)
      *
      */
-    private $titre;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="corps", type="text")
-     */
-    private $corps;
-    /**
-     * @var string
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="articles", cascade={"persist"})
-     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
-     */
-    private $menu;
+    private $motif;
+
     /**
      * @var int
      *
@@ -68,10 +49,11 @@ class Article extends ContainerAware implements RouteReferrersReadInterface
 
     public function __construct()
     {
-        //$this->accepte = FALSE;
-        //$this->accepte = new ArticleEnAttenteDeValidation();
-        $this->etatArticle = new ArticleEnAttenteDeValidation();
-        $this->accepte = 1;
+        //$this->etat = FALSE;
+        //$this->etat = new ArticleEnAttenteDeValidation();
+//        $this->etatArticle = new ArticleEnAttenteDeValidation();
+        $this->etat = 1;
+        $this->date = new \DateTime();
         //$this->auteur = $this->container->get('security.context')->getToken()->getUser()->getId();
 
     }
@@ -91,90 +73,59 @@ class Article extends ContainerAware implements RouteReferrersReadInterface
         $this->auteur = $auteur;
     }
 
-    public function getRoutes()
-    {
-        return $this->routes;
-    }
+
+
 
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get titre
-     *
-     * @return string
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
-
-    /**
-     * Set titre
-     *
-     * @param string $titre
-     * @return Article
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    /**
-     * Get corps
-     *
-     * @return string
-     */
-    public function getCorps()
-    {
-        return $this->corps;
-    }
-
-    /**
-     * Set corps
-     *
-     * @param string $corps
-     * @return Article
-     */
-    public function setCorps($corps)
-    {
-        $this->corps = $corps;
-
-        return $this;
-    }
-
-    /**
-     * Get accepte
+     * Get etat
      *
      * @return ArticleEtat
      */
-    public function getAccepte()
+    public function getEtat()
     {
-        switch ($this->accepte) {
-            case 1:
-                $this->etatArticle = new ArticleEnAttenteDeValidation();
-                break;
-            case 2:
-                $this->etatArticle = new ArticleValide();
-                break;
-            case 3:
-                $this->etatArticle = new ArticleRefuse();
-                break;
+//        switch ($this->etat) {
+//            case 1:
+//                $this->etatArticle = new ArticleEnAttenteDeValidation();
+//                break;
+//            case 2:
+//                $this->etatArticle = new ArticleValide();
+//                break;
+//            case 3:
+//                $this->etatArticle = new ArticleRefuse();
+//                break;
+//
+//            default:
+//                $this->etatArticle = new ArticleEnAttenteDeValidation();
+//                break;
+//        }
+        return $this->etat;
+    }
 
+    /**
+     * Set etat
+     *
+     * @param integer $etat
+     * @return Article
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getNomEtat()
+    {
+        switch ($this->etat) {
+            case 1:
+                return "En attente de vérification";
+            case 2:
+                return "Accepté";
+            case 3:
+                return "Refusé";
             default:
-                $this->etatArticle = new ArticleEnAttenteDeValidation();
-                break;
+                return "En attente de vérification";
         }
-        return $this->accepte;
     }
 
     /**
@@ -207,26 +158,81 @@ class Article extends ContainerAware implements RouteReferrersReadInterface
 
     public function valider()
     {
-        $this->etatArticle->valider($this);
-        $this->accepte = 2;
+//        $this->etatArticle->valider($this);
+        $this->etat = 2;
     }
 
     public function refuser()
     {
-        $this->etatArticle->refuser($this);
-        $this->accepte = 3;
+//        $this->etatArticle->refuser($this);
+        $this->etat = 3;
     }
+
+//    public function getArticleEtat()
+//    {
+//        return $this->etatArticle;
+//    }
 
     public function editer()
     {
-        $this->etatArticle->editer($this);
-        $this->accepte = 1;
+//        $this->etatArticle->editer($this);
+        $this->etat = 1;
     }
 
-    public function getArticleEtat()
+    /**
+     * Get motif
+     *
+     * @return string
+     */
+    public function getMotif()
     {
-        return $this->etatArticle;
+        return $this->motif;
     }
-    
+
+    /**
+     * Set motif
+     *
+     * @param string $motif
+     * @return Article
+     */
+    public function setMotif($motif)
+    {
+        $this->motif = $motif;
+
+        return $this;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Article
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function resetEtat()
+    {
+        $this->etat = 1;
+    }
+
+    public function estRefuse()
+    {
+        return $this->etat == 3;
+    }
 
 }

@@ -39,7 +39,6 @@ class ArticleController extends Controller
         $user = $this->get('security.context')->getToken()->getUser()->getId();
 
         $entities = $em->getRepository('ECMArticleBundle:Article')->findBy(array('auteur' => $user));
-        //var_dump($entities);
         return $this->render('ECMArticleBundle:Article:index.html.twig', array(
             'entities' => $entities,
         ));
@@ -204,6 +203,7 @@ class ArticleController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->resetEtat();
             $em->flush();
 
             return $this->redirect($this->generateUrl('article_edit', array('id' => $id)));

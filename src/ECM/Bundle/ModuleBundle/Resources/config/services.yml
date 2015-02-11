@@ -1,10 +1,6 @@
-parameters:
-#    ecm_module.example.class: ECM\Bundle\ModuleBundle\Example
+parameters: ~
 
 services:
-#    ecm_module.example:
-#        class: %ecm_module.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
     sonata.admin.sponsor:
         class: ECM\Bundle\ModuleBundle\Admin\SponsorAdmin
         tags:

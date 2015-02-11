@@ -4,24 +4,24 @@ services:
 
 
     sonata.admin.article:
+        class: ECM\Bundle\ArticleBundle\Admin\PublicationAdmin
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: "Contenu"
+              label: "Publications"
+        arguments:
+            - ~
+            - ECM\Bundle\ArticleBundle\Entity\Publication
+            - ~
+            
+    sonata.admin.articleUser:
         class: ECM\Bundle\ArticleBundle\Admin\ArticleAdmin
         tags:
             - name: sonata.admin
               manager_type: orm
               group: "Contenu"
               label: "Articles"
-        arguments:
-            - ~
-            - ECM\Bundle\ArticleBundle\Entity\Article
-            - ~
-            
-    sonata.admin.articleUser:
-        class: ECM\Bundle\ArticleBundle\Admin\ArticleAdminUser
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: "Contenu"
-              label: "Articles Utilisateur"
         arguments:
             - ~
             - ECM\Bundle\ArticleBundle\Entity\Article
