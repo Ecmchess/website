@@ -31,7 +31,7 @@ class MenuBuilder extends ContainerAware {
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
          $menu->addChild('Administration', array('route' => 'sonata_admin_dashboard'))
-            ->setAttribute('glyphicon', 'lock');
+            ->setAttribute('glyphicon', 'wrench');
         return $menu;
     }
 
@@ -43,11 +43,19 @@ class MenuBuilder extends ContainerAware {
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
 
-        $menu->addChild('Proposer article', array('route' => 'article_new'));
-        $menu->addChild('Mes articles', array('route' => 'ecm_articles_show_by_util'));
-        $menu->addChild('', array('route' => 'fos_user_security_logout'))
-            ->setAttribute('glyphicon', 'off')
+        $menu->addChild('')
+            ->setAttribute('glyphicon', 'user')
+            ->setAttribute('dropdown', true)
             ->setAttribute('class', 'navbar-right');
+
+        $menu['']->addChild('Proposer article', array('route' => 'article_new'))
+            ->setAttribute('glyphicon', 'pencil');
+        $menu['']->addChild('Mes articles', array('route' => 'ecm_articles_show_by_util'))
+            ->setAttribute('glyphicon', 'book');
+        $menu['']->addChild('Modifier mon mot de passe', array('route' => 'fos_user_change_password'))
+            ->setAttribute('glyphicon', 'lock');
+        $menu['']->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
+            ->setAttribute('glyphicon', 'off');
         
         return $menu;
     }
