@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d8a5b3-a09d-401b-9868-7cd27a08555e" name="Default" comment="itération 5 fonctionnelle">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/Article.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Admin/ArticleAdmin.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Admin/ArticleAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/ArticleRepository.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/ArticleRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Form/ArticleType.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Form/ArticleType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Admin/MenuAdmin.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Admin/MenuAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/Publication.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/Publication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Admin/PublicationAdmin.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Admin/PublicationAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/PublicationRepository.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Entity/PublicationRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Entity/SubMenu.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Entity/SubMenu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/routing/article.yml" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/routing/article.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Article/index.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Article/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/SonataAdminBundle/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/SonataAdminBundle/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/menu.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/menu.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Article/show.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Article/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Default/show.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Resources/views/Default/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Resources/views/Sponsor/sponsorsFront.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Resources/views/Sponsor/sponsorsFront.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ecmchess.iws" />
@@ -63,7 +37,7 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3272727" vertical-offset="0" max-vertical-offset="1296">
+            <state vertical-scroll-proportion="0.23376623" vertical-offset="36" max-vertical-offset="1296">
               <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
               <folding>
                 <element signature="e#55#106#0#PHP" expanded="true" />
@@ -128,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-14.111111" vertical-offset="375" max-vertical-offset="918">
-              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1114,7 +1088,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423660989521</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="itération 5 fonctionnelle">
+      <created>1423745815467</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1423745815467</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1142,7 +1122,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37412095" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37412095" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.302391" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47679326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1641,14 +1621,14 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.111111" vertical-offset="375" max-vertical-offset="918">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3272727" vertical-offset="0" max-vertical-offset="1296">
+        <state vertical-scroll-proportion="0.23376623" vertical-offset="36" max-vertical-offset="1296">
           <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
           <folding>
             <element signature="e#55#106#0#PHP" expanded="true" />
