@@ -24,6 +24,12 @@ class PublicationAdmin extends Admin
     protected $baseRouteName = 'sonata_article';
     protected $baseRoutePattern = 'article';
 
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $query->andWhere($query->getRootAlias() . ' NOT INSTANCE OF ECMArticleBundle:Article');
+        return $query;
+    }
 
     protected function configureFormFields(FormMapper $formMapper)
     {

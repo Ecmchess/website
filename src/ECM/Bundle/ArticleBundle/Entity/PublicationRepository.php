@@ -24,11 +24,11 @@ class PublicationRepository extends EntityRepository
         //$query = 'SELECT a, m FROM ECMArticleBundle:Article a JOIN a.menu m WHERE a.etat = 1 and a.menu = :menu';
         //return $this->_em->createQuery($query)->setParameter('menu', $menu)->getResult();
 
-        $query = $this->_em->createQueryBuilder('a')
-            ->select('a')
-            ->from('ECMArticleBundle:Article', 'a')
-            ->where('a.menu = :menu')
-            ->andWhere('a.etat = 2')
+        $query = $this->_em->createQueryBuilder('p')
+            ->select('p')
+            ->from('ECMArticleBundle:Publication', 'p')
+            ->where('p.menu = :menu')
+            ->andWhere('p.etat = 2')
             ->setParameter('menu', $menu)
             ->getQuery();
 

@@ -3,28 +3,28 @@ article:
     defaults: { _controller: "ECMArticleBundle:Article:index" }
 
 article_show:
-    path:     /{id}/show
+    path:     user/{id}/show
     defaults: { _controller: "ECMArticleBundle:Article:show" }
 
 article_new:
-    path:     /new
+    path:     user/new
     defaults: { _controller: "ECMArticleBundle:Article:new" }
 
 article_create:
-    path:     /create
+    path:     user/create
     defaults: { _controller: "ECMArticleBundle:Article:create" }
     requirements: { _method: post }
 
 article_edit:
-    path:     /{id}/edit
+    path:     user/{id}/edit
     defaults: { _controller: "ECMArticleBundle:Article:edit" }
 
 article_update:
-    path:     /{id}/update
+    path:     user/{id}/update
     defaults: { _controller: "ECMArticleBundle:Article:update" }
     requirements: { _method: post|put }
 
 article_delete:
-    path:     /{id}/delete
+    path:     user/{id}/delete
     defaults: { _controller: "ECMArticleBundle:Article:delete" }
     requirements: { _method: post|delete }

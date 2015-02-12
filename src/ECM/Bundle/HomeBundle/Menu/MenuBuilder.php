@@ -42,10 +42,12 @@ class MenuBuilder extends ContainerAware {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-         $menu->addChild('Déconnexion', array('route' => 'fos_user_security_logout'))
-            ->setAttribute('glyphicon', 'off');
+
         $menu->addChild('Proposer article', array('route' => 'article_new'));
         $menu->addChild('Mes articles', array('route' => 'ecm_articles_show_by_util'));
+        $menu->addChild('', array('route' => 'fos_user_security_logout'))
+            ->setAttribute('glyphicon', 'off')
+            ->setAttribute('class', 'navbar-right');
         
         return $menu;
     }
@@ -56,13 +58,13 @@ class MenuBuilder extends ContainerAware {
     public function createAnonymousMenu (){
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
-        
-        $menu->addChild('Connexion', array('route' => 'fos_user_security_login'))
-            ->setAttribute('glyphicon', 'off');
+
+
         $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
             ->setAttribute('glyphicon', 'pencil');
+        $menu->addChild('', array('route' => 'fos_user_security_login'))
+            ->setAttribute('glyphicon', 'off');
 
-        $menu['Connexion']->setAttribute('class', 'navbar-right');
         return $menu;
     }
 

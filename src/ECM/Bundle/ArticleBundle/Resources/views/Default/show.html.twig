@@ -4,23 +4,28 @@
 
 
 {% block titre %}
-    <h1>{{ menu | upper }}</h1>
+    <h1>{{ menu }}</h1>
 
 {% endblock %}
 
 
 {% block body %}
     {% for article in articles %}
+
+        <h2>{{ article.titre | capitalize }} </h2>
         <div class="row">
-            <div class="col-lg-12">
-
-
-                <h2>{{ article.titre }}</h2>
-                <p>
-                    {{ article.corps | raw }}
-                </p>
-
-                <div class="pull-right">{{ article.auteur }}</div>
+            <div class="col-xs-9">
+                <p>{{ article.corps | raw }}</p>
+                <ul class="list-inline">
+                    {% if article.auteur is defined %}
+                        <li>
+                            <span><i class="glyphicon glyphicon-pencil"></i> {{ article.auteur }}</span>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <span><i class="glyphicon glyphicon-calendar"></i> {{ article.date | date('Y-m-d') }}</span>
+                    </li>
+                </ul>
             </div>
         </div>
         <hr>

@@ -25,9 +25,9 @@ class ArticleType extends AbstractType
                 'multiple' => false,
                 'required' => true,
                 'query_builder' => function (MenuRepository $rep) {
-                    return $rep->createQueryBuilder('m')
-                        ->leftJoin('m.enfants', 'e')
-                        ->where('m INSTANCE OF ECMModuleBundle:SubMenu');
+                    return $rep->createQueryBuilder('m');
+                    //->leftJoin('m.enfants', 'e')
+                    // ->where('m INSTANCE OF ECMModuleBundle:SubMenu');
                 }));
     }
 

@@ -15,6 +15,7 @@ class MenuAdmin extends Admin
     protected $baseRouteName = 'sonata_menu';
     protected $baseRoutePattern = 'menu';
 
+
     /**
      * @param DatagridMapper $datagridMapper
      */

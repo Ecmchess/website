@@ -18,10 +18,13 @@ class DefaultController extends Controller {
      */
     public function showArticlesByMenuAction($titreMenu){
         $aR = $this->getDoctrine()->getRepository('ECMArticleBundle:Article');
+        $pR = $this->getDoctrine()->getRepository('ECMArticleBundle:Publication');
         $mR = $this->getDoctrine()->getRepository('ECMModuleBundle:Menu');
         $titreMenu = ucfirst(preg_replace('#-#', ' ', $titreMenu));
         $menu = $mR->findOneBy(array('titre' => $titreMenu));
-        $articles = $aR->getArticlesByMenuAndByEtat($menu);
+
+        $articles = $pR->getArticlesByMenuAndByEtat($menu);
+
         return array('articles' => $articles, 'menu' => $titreMenu);
     }
 

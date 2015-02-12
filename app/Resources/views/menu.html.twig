@@ -1,14 +1,18 @@
-<nav class="navbar navbar-default pull-left" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 {#{{ knp_menu_render('main', {'currentClass': 'active'}) }}#}
     {{ knp_menu_render('generated', {'currentClass': 'active'}) }}
-</nav>
-<nav class="navbar navbar-default pull-right" role="navigation">
     {% if is_granted('ROLE_USER') %}
+        <ul class="nav navbar-nav navbar-right">
         {{ knp_menu_render('user', {'currentClass': 'active'}) }}     
         {% if is_granted('ROLE_ADMIN') %}
             {{ knp_menu_render('admin', {'currentClass': 'active'}) }}
         {% endif %}
+        </ul>
     {% else %}
-        {{ knp_menu_render('anonymous', {'currentClass': 'active'}) }}  
-    {% endif %}     
-</nav>
+        <ul class="nav navbar-nav navbar-right">
+            {{ knp_menu_render('anonymous', {'currentClass': 'active'}) }}
+        </ul>
+    {% endif %}
+    </div>
+</div>

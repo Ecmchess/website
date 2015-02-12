@@ -3,13 +3,14 @@
 {% block body -%}
     <h1>Liste Article</h1>
 
-    <table class="table table-condensed">
+    <table class="table table-striped table-hover ">
         <thead>
         <tr>
             <th>Titre</th>
             <th>Actions</th>
             <th>Menu</th>
             <th>Etat</th>
+            <th>Motif</th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,10 @@
                 </td>
                 <td>{{ entity.menu }}</td>
                 <td>{{ entity.nomEtat }}</td>
+                <td>
+                    {% if entity.estRefuse %}{{ entity.motif }}
+                    {% endif %}
+                </td>
 
             </tr>
         {% endfor %}

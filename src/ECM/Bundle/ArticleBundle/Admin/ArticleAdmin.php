@@ -26,6 +26,7 @@ class ArticleAdmin extends Admin
     protected $baseRouteName = 'sonata_publication';
     protected $baseRoutePattern = 'publications';
 
+
     public function postUpdate($article)
     {
         if ($article->estRefuse()) {
@@ -33,7 +34,7 @@ class ArticleAdmin extends Admin
                 ->setSubject('Hello Email')
                 ->setFrom('ecmadmin@yopmail.com')
                 ->setTo($article->getAuteur()->getEmail())
-                ->setBody($this->getConfigurationPool()->getContainer()->get('templating')->renderResponse('ECMArticleBundle:Article:email.txt.twig'), array('article', $article));
+                ->setBody($this->getConfigurationPool()->getContainer()->get('templating')->renderResponse('ECMArticleBundle:Article:email.txt.twig', array('article' => $article)));
             $this->getConfigurationPool()->getContainer()->get('mailer')->send($message);
         }
     }
@@ -46,11 +47,11 @@ class ArticleAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('etat', 'choice', array('choices' => array('2' => 'accepter', '3' => 'refuser'), 'expanded' => true))
-            ->add('motif')
             ->add('titre', 'text')
             ->add('corps', 'ckeditor')
-            ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false));
+            ->add('menu', 'sonata_type_model', array('property' => 'titre', 'btn_add' => false))
+            ->add('etat', 'choice', array('choices' => array('2' => 'Accepter', '3' => 'Refuser'), 'expanded' => true))
+            ->add('motif');
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -58,7 +59,8 @@ class ArticleAdmin extends Admin
         $listMapper
             ->addIdentifier('titre')
             ->add('menu.titre', null, array('label' => 'Menu'))
-            ->add('etat', null, array('label' => 'Etat'))
+            ->add('nomEtat', null, array('label' => 'Etat'))
+            ->add('auteur')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

@@ -1,11 +1,16 @@
 
 {% block sponsors %}
     <ul class="nav nav-pills nav-stacked">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Sponsors
+            </div>
+            <div class="panel-body">
     {% for sponsor in sponsors %}
         <li>
         {% if sponsor.urlImage != "" %}
         <a href="{{ sponsor.lien }}" target="_blank">
-            <img src="{{ asset(sponsor.webPath) }}" width="150" height="150" class="img-thumbnail">
+            <img src="{{ asset(sponsor.webPath) }}" width="100" height="100" class="img-thumbnail">
             {#<img src="{{ asset('images/sponsor/' ~ sponsor.urlImage ) }}" class="img-thumbnail">#}
         </a>
         {% else %}
@@ -15,5 +20,7 @@
         {% endif %}
         </li>
     {% endfor %}
+            </div>
+        </div>
     </ul>
 {% endblock %}

@@ -11,18 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
  * Publication
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\PublicationRepository")
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\ArticleRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Article extends Publication
 {
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="etat", type="integer")
-     */
-    public $etat;
 
 //    /**
 //     * @var ArticleEtat

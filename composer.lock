@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ae28da0e8478776acb6dee484aad94f3",
+    "hash": "7c19310b003925a5b60be2d778ab7774",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1000,17 +1000,17 @@
         },
         {
             "name": "friendsofsymfony/rest-bundle",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "target-dir": "FOS/RestBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "a9377f6a05fb516423d6adf9079c6e5fb41e4799"
+                "reference": "d72f3a41409997ebd91ca34561075c615d2ddcc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/a9377f6a05fb516423d6adf9079c6e5fb41e4799",
-                "reference": "a9377f6a05fb516423d6adf9079c6e5fb41e4799",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/d72f3a41409997ebd91ca34561075c615d2ddcc0",
+                "reference": "d72f3a41409997ebd91ca34561075c615d2ddcc0",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2015-01-27 09:39:58"
+            "time": "2015-02-09 12:22:33"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1563,33 +1563,35 @@
         },
         {
             "name": "knplabs/doctrine-behaviors",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/DoctrineBehaviors.git",
-                "reference": "03ee008e50827827ebf00247200f7214875649b4"
+                "reference": "d7ced932fe89ee9fd812a923373c0237792d8846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/03ee008e50827827ebf00247200f7214875649b4",
-                "reference": "03ee008e50827827ebf00247200f7214875649b4",
+                "url": "https://api.github.com/repos/KnpLabs/DoctrineBehaviors/zipball/d7ced932fe89ee9fd812a923373c0237792d8846",
+                "reference": "d7ced932fe89ee9fd812a923373c0237792d8846",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": ">=2.2",
-                "php": ">=5.4.0"
+                "php": ">=5.4"
             },
             "require-dev": {
-                "doctrine/mongodb-odm": "dev-master",
                 "doctrine/orm": ">=2.2",
+                "ext-pdo_mysql": "*",
                 "ext-pdo_pgsql": "*",
                 "ext-pdo_sqlite": "*",
+                "hexmedia/yaml-linter": "~0.1",
+                "jakub-onderka/php-parallel-lint": "~0.8",
                 "phpunit/phpunit": "~3.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -1619,7 +1621,7 @@
                 "translatable",
                 "tree"
             ],
-            "time": "2014-09-17 14:27:02"
+            "time": "2015-02-06 12:50:23"
         },
         {
             "name": "knplabs/knp-markdown-bundle",
@@ -2843,16 +2845,16 @@
         },
         {
             "name": "sonata-project/doctrine-orm-admin-bundle",
-            "version": "dev-master",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "e558d797cc8c995a54566ddb38d6042e74b5e674"
+                "reference": "1ab6b728ef03d6565bdde6b0c2b65a9e7a2659b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/e558d797cc8c995a54566ddb38d6042e74b5e674",
-                "reference": "e558d797cc8c995a54566ddb38d6042e74b5e674",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/1ab6b728ef03d6565bdde6b0c2b65a9e7a2659b9",
+                "reference": "1ab6b728ef03d6565bdde6b0c2b65a9e7a2659b9",
                 "shasum": ""
             },
             "require": {
@@ -2877,7 +2879,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.3.x-dev"
                 }
             },
             "autoload": {
@@ -2909,7 +2911,7 @@
                 "generator",
                 "sonata"
             ],
-            "time": "2015-01-04 07:49:40"
+            "time": "2014-09-01 20:21:38"
         },
         {
             "name": "sonata-project/easy-extends-bundle",
@@ -4058,7 +4060,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20,
-        "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/datagrid-bundle": 20,
         "pixassociates/sortable-behavior-bundle": 20
     },

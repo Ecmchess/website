@@ -12,10 +12,17 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  * @ORM\Entity
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\Entity(repositoryClass="ECM\Bundle\ArticleBundle\Entity\PublicationRepository")
  * @ORM\DiscriminatorMap({"article" = "Article", "publication" = "Publication"})
  */
 class Publication extends ContainerAware
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="etat", type="integer")
+     */
+    public $etat;
     /**
      * @var integer
      *
@@ -43,7 +50,7 @@ class Publication extends ContainerAware
      *
      *
      * @ORM\ManyToOne(targetEntity="ECM\Bundle\ModuleBundle\Entity\Menu", inversedBy="articles", cascade={"persist"})
-     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id", onDelete="SET NULL")
      */
     protected $menu;
 
@@ -58,6 +65,7 @@ class Publication extends ContainerAware
     public function __construct()
     {
         $this->date = new \Datetime();
+        $this->etat = 2;
     }
 
     /**
@@ -161,4 +169,6 @@ class Publication extends ContainerAware
 
         return $this;
     }
+
+
 }

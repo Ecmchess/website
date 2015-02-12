@@ -25,7 +25,7 @@ class SubMenu extends Menu
     /**
      * @var
      * @ORM\ManyToOne(targetEntity="Menu", inversedBy="enfants")
-     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_parent", referencedColumnName="id")
      */
     private $parent;
 
