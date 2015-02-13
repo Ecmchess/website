@@ -20,6 +20,7 @@
         }
     ],
     "require": {
+        "helios-ag/fm-elfinder-bundle": "2.x",
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
@@ -38,7 +39,7 @@
         "jquery/jquery":  "1.11.*",
         "friendsofsymfony/user-bundle": "dev-master",
         "egeloen/ckeditor-bundle": "~2.0",
-        "sonata-project/admin-bundle": "2.4.*",
+        "sonata-project/admin-bundle": "~2.3",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
         "sonata-project/formatter-bundle": "~2.3",
         "sonata-project/cache-bundle": "~2.2",
@@ -77,7 +78,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",

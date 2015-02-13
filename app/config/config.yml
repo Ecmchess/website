@@ -1,10 +1,15 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    
 ivory_ck_editor:
+    default_config: default
     configs:
-        config_article_simple:
-            toolbar: standard
+        default:
+            filebrowserBrowseRoute: elfinder
+            filebrowserImageBrowseRoute: elfinder            
+            
+            
 framework:
     #esi:             ~
     translator:      ~
@@ -283,7 +288,23 @@ stof_doctrine_extensions:
             tree: true
             sortable: true
 
-
+fm_elfinder:
+    instances:
+        default:
+            locale: %locale% # defaults to current request locale
+            editor: ckeditor # other options are tinymce, tinymce4, form, custom and simple, 
+            fullscreen: true # defaults true, applies to simple and ckeditor editors
+            include_assets: true # disable if you want to handle loading of the javascript and css assets yourself
+            connector:
+                debug: false # defaults to false
+                roots:       # at least one root must be defined
+                    uploads:
+                        showhidden: false # defaults to false
+                        driver: LocalFileSystem
+                        path: images # root path. You can add a home path (e.g. for multiple users) in the URL used to access this instance.
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
+                        upload_deny: ['all']
+                        upload_max_size: 2M
 
 #
 ## Sonata SEO Configuration
