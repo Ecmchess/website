@@ -1,0 +1,28 @@
+parameters:
+#    ecm_shop.example.class: ECM\Bundle\ShopBundle\Example
+
+services:
+
+    sonata.admin.produit:
+            class: ECM\Bundle\ShopBundle\Admin\ProduitAdmin
+            tags:
+                - name: sonata.admin
+                  manager_type: orm
+                  group: "E-Boutique"
+                  label: "Produits"
+            arguments:
+                - ~
+                - ECM\Bundle\ShopBundle\Entity\Produit
+                - ~
+
+    sonata.admin.categorie:
+                class: ECM\Bundle\ShopBundle\Admin\CategorieAdmin
+                tags:
+                    - name: sonata.admin
+                      manager_type: orm
+                      group: "E-Boutique"
+                      label: "Categories"
+                arguments:
+                    - ~
+                    - ECM\Bundle\ShopBundle\Entity\Categorie
+                    - ~

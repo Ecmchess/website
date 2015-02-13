@@ -29,6 +29,7 @@ class PublicationRepository extends EntityRepository
             ->from('ECMArticleBundle:Publication', 'p')
             ->where('p.menu = :menu')
             ->andWhere('p.etat = 2')
+            ->orderBy('p.date', 'DESC')
             ->setParameter('menu', $menu)
             ->getQuery();
 

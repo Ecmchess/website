@@ -132,3 +132,8 @@ a, a:hover {
     background-color: #C23836;
     color: #E45A58;
 }
+
+img.admin-preview {
+    max-height: 200px;
+    max-width: 200px;
+}

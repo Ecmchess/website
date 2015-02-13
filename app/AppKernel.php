@@ -25,6 +25,7 @@ class AppKernel extends Kernel {
             new ECM\Bundle\ArticleBundle\ECMArticleBundle(),
             new ECM\Bundle\ModuleBundle\ECMModuleBundle(),
             new ECM\Bundle\AdminBundle\ECMAdminBundle(),
+            new ECM\Bundle\ShopBundle\ECMShopBundle(),
             //Bundles externes ----------------------------------------
             new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
@@ -46,12 +47,15 @@ class AppKernel extends Kernel {
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
 //            new Sonata\CacheBundle\SonataCacheBundle(),
 //            new Sonata\SeoBundle\SonataSeoBundle(),
-//            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 //            new Sonata\NotificationBundle\SonataNotificationBundle(),
 //            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
 //            new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

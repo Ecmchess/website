@@ -89,6 +89,16 @@ class Sponsor {
     }
 
     /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
      * Set titre
      *
      * @param string $titre
@@ -101,12 +111,13 @@ class Sponsor {
     }
 
     /**
-     * Get titre
+     * Get urlImage
      *
      * @return string
      */
-    public function getTitre() {
-        return $this->titre;
+    public function getUrlImage()
+    {
+        return $this->urlImage;
     }
 
     /**
@@ -122,12 +133,13 @@ class Sponsor {
     }
 
     /**
-     * Get urlImage
+     * Get lien
      *
      * @return string
      */
-    public function getUrlImage() {
-        return $this->urlImage;
+    public function getLien()
+    {
+        return $this->lien;
     }
 
     /**
@@ -142,23 +154,8 @@ class Sponsor {
         return $this;
     }
 
-    /**
-     * Get lien
-     *
-     * @return string
-     */
-    public function getLien() {
-        return $this->lien;
-    }
-
-    
-
     public function getAbsolutePath() {
         return null === $this->urlImage ? null : $this->getUploadRootDir() . '/' . $this->urlImage;
-    }
-
-    public function getWebPath() {
-        return null === $this->urlImage ? null : $this->getUploadDir() . '/' . $this->urlImage;
     }
 
     protected function getUploadRootDir() {
@@ -172,45 +169,10 @@ class Sponsor {
         return 'images/sponsors';
     }
 
-//    /**
-//     * @ORM\PostPersist()
-//     * @ORM\PostUpdate()
-//     */
-//    public function upload() {
-//        // la propriété « image » peut être vide si le champ n'est pas requis
-//        if (null === $this->image) {
-//            return;
-//        }
-//
-//        // utilisez le nom de fichier original ici mais
-//        // vous devriez « l'assainir » pour au moins éviter
-//        // quelconques problèmes de sécurité
-//        // la méthode « move » prend comme arguments le répertoire cible et
-//        // le nom de fichier cible où le fichier doit être déplacé
-//        $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
-//
-//        // définit la propriété « urlImage » comme étant le nom de fichier où vous
-//        // avez stocké le fichier
-//        $this->urlImage = $this->image->getClientOriginalName();
-//
-//        // « nettoie » la propriété « image » comme vous n'en aurez plus besoin
-//        $this->image = null;
-//    }
-
-//    /**
-//     * @ORM\PrePersist()
-//     * @ORM\PreUpdate()
-//     */
-//    public function preUpload()
-//    {
-//        echo '<pre>';
-//        var_dump($this);
-//        echo '</pre>';
-//        if (null !== $this->image) {
-//            // faites ce que vous voulez pour générer un nom unique
-//            $this->urlImage = sha1(uniqid(mt_rand(), true)).'.'.$this->image->guessExtension();
-//        }
-//    }
+    public function getWebPath()
+    {
+        return null === $this->urlImage ? null : $this->getUploadDir() . '/' . $this->urlImage;
+    }
 
     /**
      * @ORM\PrePersist()
@@ -226,13 +188,6 @@ class Sponsor {
         // va automatiquement être lancée par la méthode move(). Cela va empêcher
         // proprement l'entité d'être persistée dans la base de données si
         // erreur il y a
-
-
-
-
-
-
-
         $this->image->move($this->getUploadRootDir(), $this->image->getClientOriginalName());
         $this->image = null;
     }
@@ -258,6 +213,16 @@ class Sponsor {
     }
 
     /**
+     * Get updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
      * Set updated
      *
      * @param \DateTime $updated
@@ -266,18 +231,18 @@ class Sponsor {
     public function setUpdated($updated)
     {
         $this->updated = $updated;
-    
+
         return $this;
     }
 
     /**
-     * Get updated
+     * Get position
      *
-     * @return \DateTime 
+     * @return integer
      */
-    public function getUpdated()
+    public function getPosition()
     {
-        return $this->updated;
+        return $this->position;
     }
 
     /**
@@ -289,17 +254,7 @@ class Sponsor {
     public function setPosition($position)
     {
         $this->position = $position;
-    
-        return $this;
-    }
 
-    /**
-     * Get position
-     *
-     * @return integer 
-     */
-    public function getPosition()
-    {
-        return $this->position;
+        return $this;
     }
 }

@@ -25,3 +25,18 @@ services:
             - {name: sonata.admin, manager_type: orm, group: Modules, label: Menus}
         calls:
             - [setSubClasses, [{ Menu:"ECM\Bundle\ModuleBundle\Entity\Menu", Sous-menu:"ECM\Bundle\ModuleBundle\Entity\SubMenu"}]]
+
+
+    sonata.admin.image:
+            class: ECM\Bundle\ModuleBundle\Admin\ImageAdmin
+            tags:
+                - name: sonata.admin
+                  manager_type: orm
+                  group: "Modules"
+                  label: "Chargement Images"
+            arguments:
+                - ~
+                - ECM\Bundle\ModuleBundle\Entity\Image
+                - ~
+            calls:
+                - [setTemplates, [{outer_list_rows_mosaic:"SonataMediaBundle:MediaAdmin:list_outer_rows_mosaic.html.twig"}]]
