@@ -8,6 +8,7 @@ class AppKernel extends Kernel {
     public function registerBundles() {
         $bundles = array(
             //Bundles systèmes ----------------------------------------
+            new FM\ElfinderBundle\FMElfinderBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
