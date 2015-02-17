@@ -1,3 +1,8 @@
-ecm_shop_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ECMShopBundle:Default:index }
+
+ecm_shop_allProduct:
+    path:     /shop/
+    defaults: { _controller: ECMShopBundle:Produit:index }
+    
+ecm_shop_ProductById:
+    path:     /shop/produit/{id}
+    defaults: { _controller: ECMShopBundle:Produit:show }

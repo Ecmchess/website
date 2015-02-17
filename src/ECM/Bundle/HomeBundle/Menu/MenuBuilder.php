@@ -67,7 +67,6 @@ class MenuBuilder extends ContainerAware {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-
         $menu->addChild("S'enregistrer", array('route' => 'fos_user_registration_register'))
             ->setAttribute('glyphicon', 'pencil');
         $menu->addChild('', array('route' => 'fos_user_security_login'))
@@ -95,6 +94,8 @@ class MenuBuilder extends ContainerAware {
                 $menu[$menuItem->getTitre()]->addChild($submenuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $subSlug)));
             }
         }
+        $menu->addChild("Boutique", array('route' => 'ecm_shop_allProduct'))
+            ->setAttribute('glyphicon', 'shopping-cart');
 
         return $menu;
     }

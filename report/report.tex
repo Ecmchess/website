@@ -32,11 +32,74 @@ Après avoir définis le cadre du projet et les besoins généraux de celui-ci d
 
 \part{Analyse}
 \chapter{Analyse du contexte}
+Le site du club d’échec de Montpellier a été développé avec Joomla pour une mise en place facile et rapide.
+Jusqu’alors le site ne permettait qu’à des administrateurs de gérer le contenu du site.
+
+Le club désire donc que les membres inscrits aient la possibilité de proposer leurs propres articles et qu’une administration puisse vérifier la pertinence de ces derniers.
+
+L’administration pourra quant à elle, revoir l’architecture du site (pages, menus et sous-menus) à tout moment et ainsi s’assurer de la bonne lisibilité des informations partagées. 
+
+Le club possède une boutique physique interne et souhaiterait l’étendre sur son site web afin d’améliorer sa visibilité et son accessibilité. Pour cela, dans un premier temps il faudra mettre en place une vitrine informative des produits, et, le cas échéant donner la possibilité aux membres et aux visiteurs du site de passer leur commandes en ligne.
+
+\chapter{Analyse des besoins fonctionnels}
+Le nouveau site développé devra inclure:
+\begin{itemize}
+\item{une vitrine présentant le club (informations essentielles, contact, sponsors)}
+\item{une boutique en ligne}
+\item{une partie administration ou back office}
+\item{une partie publication d’articles concernant le club}
+\end{itemize}
+
+L’utilisateur enregistré pourra:
+
+\begin{itemize}
+\item{consulter les nouveautés publiées par les autres utilisateurs enregistrés}
+\item{publier des articles dans les sections autorisées}
+\item{acheter différents produits vendus dans la boutique}
+\end{itemize}
+
+L’administrateur pourra:
+\begin{itemize}
+\item{modérer les articles publiés par les utilisateurs enregistrés}
+\item{modifier les informations essentielles statiques de la vitrine (contact, cours, organigramme, sponsors, etc.)}
+\item{gérer la boutique}
+\item{gérer l’architecture du site (navigation)}
+\end{itemize}
+
+
+\chapter{Analyse des besoins non fonctionnels}
+\section{Contraintes techniques}
+Le site devra être développé avec le framework Symfony 2.
+\section{Contraintes ergonomiques}
+La charte graphique du site devra concorder avec les couleurs du club et de la commune(bleu).
+
+\chapter{Scénarios des cas d'utilisations}
+\section{Scénarios utilisateur non connecté}
+\subsection{S'inscrire sur le site}
+\subsection{Se connecter}
+\section{Scénarios utilisateur}
+\subsection{Publier un article}
+\subsection{Modifier un article}
+\section{Scénarios administrateur}
+\subsection{Ajouter un menu/sous-menu}
+\subsection{Accéder à l'interface d'administration}
+\subsection{Ajouter un sponsor}
+\subsection{Ajouter une publication}
+\subsection{Refuser un article}
+\subsection{Valider un article}
 
 \part{Conception}
 
 \part{Rapport technique}
 
+\chapter{Présentation des choix technologiques}
+\section{Langages de programmation}
+\subsection{Langage principal}
+\subsection{Langages de requêtes}
+\subsection{Langages de structuration des données}
+\subsection{Langages de configuration}
+\section{Framework et outils intégrés}
+\chapter{Justification des chois technologiques}
 
 \begin{abstract}
 Le Projet ECMCHESS consiste à réaliser un site web vitrine pour un club d’échec montpellierain.

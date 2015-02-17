@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.5)  5 FEB 2015 15:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.5)  16 FEB 2015 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,45 +369,74 @@ Overfull \hbox (17.67126pt too wide) in paragraph at lines 17--17
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./report.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./report.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 6.
+ [1
+
+])
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
- [1
 
-]
-[2
-
-] [3
+[2] [3
 
 ] [4
 
+] [5
+
 ]
  1.
-[5
+[6
 
-] [6
+]
+ 2.
 
-] [7
+Overfull \hbox (2.0773pt too wide) in paragraph at lines 47--48
+[]\T1/lmr/m/n/10.95 une vi-trine pré-sen-tant le club (in-for-ma-tions es-sen-t
+ielles, contact, spon-
+ []
+
+[7
+
+]
+ 3.
+[8
+
+]
+ 4.
+[9
+
+] [10
+
+] [11
+
+]
+ 5.
+[12
+
+]
+ 6.
+[13
 
 ] [1] [1] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1657 strings out of 494999
- 21030 string characters out of 6180229
- 76813 words of memory out of 5000000
- 4883 multiletter control sequences out of 15000+600000
- 42757 words of font info for 35 fonts, out of 8000000 for 9000
+ 1665 strings out of 494999
+ 21146 string characters out of 6180229
+ 79813 words of memory out of 5000000
+ 4889 multiletter control sequences out of 15000+600000
+ 52359 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 23i,6n,23p,412b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 23i,6n,23p,412b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/
 share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mr17.pfb>
-Output written on report.pdf (10 pages, 136702 bytes).
+Output written on report.pdf (16 pages, 150757 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

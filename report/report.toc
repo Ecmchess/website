@@ -1,5 +1,31 @@
 \select@language {french}
-\contentsline {part}{I\hspace {1em}Analyse}{4}
-\contentsline {chapter}{\numberline {1}Analyse du contexte}{5}
-\contentsline {part}{II\hspace {1em}Conception}{6}
-\contentsline {part}{III\hspace {1em}Rapport technique}{7}
+\contentsline {part}{I\hspace {1em}Analyse}{5}
+\contentsline {chapter}{\numberline {1}Analyse du contexte}{6}
+\contentsline {chapter}{\numberline {2}Analyse des besoins fonctionnels}{7}
+\contentsline {chapter}{\numberline {3}Analyse des besoins non fonctionnels}{8}
+\contentsline {section}{\numberline {3.1}Contraintes techniques}{8}
+\contentsline {section}{\numberline {3.2}Contraintes ergonomiques}{8}
+\contentsline {chapter}{\numberline {4}Sc\IeC {\'e}narios des cas d'utilisations}{9}
+\contentsline {section}{\numberline {4.1}Sc\IeC {\'e}narios utilisateur non connect\IeC {\'e}}{9}
+\contentsline {subsection}{\numberline {4.1.1}S'inscrire sur le site}{9}
+\contentsline {subsection}{\numberline {4.1.2}Se connecter}{9}
+\contentsline {section}{\numberline {4.2}Sc\IeC {\'e}narios utilisateur}{9}
+\contentsline {subsection}{\numberline {4.2.1}Publier un article}{9}
+\contentsline {subsection}{\numberline {4.2.2}Modifier un article}{9}
+\contentsline {section}{\numberline {4.3}Sc\IeC {\'e}narios administrateur}{9}
+\contentsline {subsection}{\numberline {4.3.1}Ajouter un menu/sous-menu}{9}
+\contentsline {subsection}{\numberline {4.3.2}Acc\IeC {\'e}der \IeC {\`a} l'interface d'administration}{9}
+\contentsline {subsection}{\numberline {4.3.3}Ajouter un sponsor}{9}
+\contentsline {subsection}{\numberline {4.3.4}Ajouter une publication}{9}
+\contentsline {subsection}{\numberline {4.3.5}Refuser un article}{9}
+\contentsline {subsection}{\numberline {4.3.6}Valider un article}{9}
+\contentsline {part}{II\hspace {1em}Conception}{10}
+\contentsline {part}{III\hspace {1em}Rapport technique}{11}
+\contentsline {chapter}{\numberline {5}Pr\IeC {\'e}sentation des choix technologiques}{12}
+\contentsline {section}{\numberline {5.1}Langages de programmation}{12}
+\contentsline {subsection}{\numberline {5.1.1}Langage principal}{12}
+\contentsline {subsection}{\numberline {5.1.2}Langages de requ\IeC {\^e}tes}{12}
+\contentsline {subsection}{\numberline {5.1.3}Langages de structuration des donn\IeC {\'e}es}{12}
+\contentsline {subsection}{\numberline {5.1.4}Langages de configuration}{12}
+\contentsline {section}{\numberline {5.2}Framework et outils int\IeC {\'e}gr\IeC {\'e}s}{12}
+\contentsline {chapter}{\numberline {6}Justification des chois technologiques}{13}

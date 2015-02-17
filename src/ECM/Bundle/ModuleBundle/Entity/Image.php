@@ -49,6 +49,11 @@ class Image
      */
     private $updated;
 
+    public function getUrlImage()
+    {
+        return $this->urlImage;
+    }
+
     /**
      * Get id
      *

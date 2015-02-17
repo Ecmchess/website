@@ -1,0 +1,19 @@
+{% extends 'ECMHomeBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h2>{{ entity.nom }}</h2>
+
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <td><img src="/ecmchess/web/images/uploads/{{ entity.image.webPath }}" class="product-img"></td>
+            <td><h3>Desciption :</h3> {{ entity.description }}</td>
+        </tr>
+        <tr>
+            <td>{{ entity.prix }} €</td>
+        </tr>
+
+    </table>
+
+
+{% endblock %}
