@@ -1,10 +1,6 @@
----
-authors:
-- 'Maxime Bertrand, Benjamin Hoquy, Sébastien Lacombe, Jason Thibur'
-title: 'Refonte du site web du club d’échec de Montpellier'
-...
+#Rapport de projet
 
-Remerciements {#remerciements .unnumbered}
+Remerciements 
 =============
 
 Nous aimerions remercier notre tuteur Xavier Palleja pour nous avoir
@@ -14,7 +10,7 @@ indécis.
 Nous remercions aussi Mme Gelsomino pour son aide à la rédaction de ce
 rapport ainsi que M. Gautheret qui nous a initié à Symfony2.
 
-Introduction {#introduction .unnumbered}
+Introduction 
 ============
 
 De nos jours, un site qui n’évolue pas n’attire pas les visiteurs. et
