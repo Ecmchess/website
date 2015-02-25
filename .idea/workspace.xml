@@ -2,74 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d8a5b3-a09d-401b-9868-7cd27a08555e" name="Default" comment="affichage par catégories">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/DiaSequenceProposerArticle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/DiagEtatTransitionEtatArticle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/DiagSequenceAdministrationArticle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/acceuil-btn-connexion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/ajout-publication.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/ajoutSponsor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/backoffice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/sponsors/banniere_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/btn-admin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/btn-proposer-article.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/connexion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/diagUseCase.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/diagramme-de-classe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/ecmchess.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvYWdnbG8xMDAuanBn1422205563.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvYmFubmllcmVfNS5wbmc1423838496.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvbG9nb19hZ2dsby5qcGc1422205563.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvbG9nby1lY21jaGVzcy5wbmc1422205563.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvbG9nby1nb29nbGUuanBn1423838505.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_c3BvbnNvcnMvcmVnaW9uLmdpZg1422205563.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_dXBsb2Fkcy8xOTA2ODIwLmpwZw1423833079.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_dXBsb2Fkcy9TY3JlZW5zaG90IGZyb20gMjAxNS0wMi0xMCAyMzo1MjoyMS5wbmc1423832510.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_dXBsb2Fkcy9iYW5uaWVyZV81LnBuZw1423834100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/.tmb/l1_dXBsb2Fkcy9sb2dvLWdvb2dsZS5qcGc1424102246.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/liste-article-user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/liste-article.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/liste-pubication.pfi" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/liste-publication.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/liste-sponsor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/sponsors/logo-google.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/logoiut.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/modif-article-user.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/modif-article.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/modif-publication.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/proposer-article.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.dvi" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/request-flow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/images/um.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Controller/CategorieController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Tests/Controller/CategorieControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Form/CategorieType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/config/routing/categorie.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Categorie/edit.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Categorie/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/localhost.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Categorie/new.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.glg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.glo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.gls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.ist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.lof" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Categorie/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.pdf" afterPath="$PROJECT_DIR$/report/report.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.synctex.gz" afterPath="$PROJECT_DIR$/report/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Form/ArticleType.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Form/ArticleType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php" afterPath="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.aux" afterPath="$PROJECT_DIR$/report/report.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.fdb_latexmk" afterPath="$PROJECT_DIR$/report/report.fdb_latexmk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.fls" afterPath="$PROJECT_DIR$/report/report.fls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.log" afterPath="$PROJECT_DIR$/report/report.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.tex" afterPath="$PROJECT_DIR$/report/report.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.toc" afterPath="$PROJECT_DIR$/report/report.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Shop/show.html.twig" afterPath="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Shop/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ecmchess.iws" />
@@ -141,26 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleAdminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/ArticleAdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4410">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ArticleBundle/Controller/ArticleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.6666665" vertical-offset="2268" max-vertical-offset="4410">
-              <caret line="119" column="51" selection-start-line="119" selection-start-column="51" selection-end-line="119" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="categorie.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/config/routing/categorie.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -171,11 +86,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuBuilder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuBuilder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0946746" vertical-offset="1232" max-vertical-offset="1836">
+            <state vertical-scroll-proportion="-6.0655737" vertical-offset="1232" max-vertical-offset="1836">
               <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.117647" vertical-offset="1878" max-vertical-offset="7128">
+              <caret line="114" column="48" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9029126" vertical-offset="402" max-vertical-offset="1080">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0" vertical-offset="594" max-vertical-offset="1422">
+              <caret line="49" column="63" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -238,15 +183,12 @@
         <option value="$PROJECT_DIR$/web/bundles/sonataadmin/css/styles.css" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Admin/ImageAdmin.php" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/web/css/styles.css" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/AdminBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/app/Resources/SonataAdminBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/composer.lock" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Shop/index.html.twig" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/config/routing.yml" />
@@ -255,6 +197,9 @@
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Controller/CategorieController.php" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/ShopBundle/Resources/views/Shop/show.html.twig" />
         <option value="$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -373,7 +318,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
+              <option name="myItemId" value="ModuleBundle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,291 +336,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
+              <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Categorie" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecmchess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Menu" />
+              <option name="myItemId" value="Sonata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -690,6 +355,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecmchess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ecmchess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -849,7 +532,13 @@
       <option name="project" value="LOCAL" />
       <updated>1424179215644</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="affichage par catégories">
+      <created>1424860198834</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1424860198834</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1076,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="581" max-vertical-offset="1224">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/ModuleBundle/Admin/ImageAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.666667" vertical-offset="144" max-vertical-offset="2016">
@@ -1136,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.942857" vertical-offset="3793" max-vertical-offset="7128">
-          <caret line="102" column="34" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.phpcr.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.026548672" vertical-offset="0" max-vertical-offset="678">
@@ -1175,13 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="162" max-vertical-offset="1458">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1328,8 +996,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ECM/Bundle/HomeBundle/Menu/MenuBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0946746" vertical-offset="1232" max-vertical-offset="1836">
+        <state vertical-scroll-proportion="-6.0655737" vertical-offset="1232" max-vertical-offset="1836">
           <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="594" max-vertical-offset="1422">
+          <caret line="49" column="63" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.117647" vertical-offset="1878" max-vertical-offset="7128">
+          <caret line="114" column="48" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9029126" vertical-offset="402" max-vertical-offset="1080">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
