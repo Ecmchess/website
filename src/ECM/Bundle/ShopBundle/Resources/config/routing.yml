@@ -6,3 +6,7 @@ ecm_shop_allProduct:
 ecm_shop_ProductById:
     path:     /shop/produit/{id}
     defaults: { _controller: ECMShopBundle:Produit:show }
+
+ECMShopBundle_categorie:
+        resource: "@ECMShopBundle/Resources/config/routing/categorie.yml"
+        prefix:   /categorie

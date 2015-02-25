@@ -94,7 +94,7 @@ class MenuBuilder extends ContainerAware {
                 $menu[$menuItem->getTitre()]->addChild($submenuItem->getTitre(), array('route' => 'ecm_articles_show_by_menu', 'routeParameters' => array('titreMenu' => $subSlug)));
             }
         }
-        $menu->addChild("Boutique", array('route' => 'ecm_shop_allProduct'))
+        $menu->addChild("Boutique", array('route' => 'categorie'))
             ->setAttribute('glyphicon', 'shopping-cart');
 
         return $menu;

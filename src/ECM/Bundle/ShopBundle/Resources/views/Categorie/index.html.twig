@@ -1,0 +1,8 @@
+{% extends 'ECMHomeBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Catégories </h1>
+    {% for entity in entities %}
+        <a href="{{ path('categorie_liste_produits', {'id':entity.id}) }}">{{ entity.nom }}<br></a>
+    {% endfor %}
+{% endblock %}

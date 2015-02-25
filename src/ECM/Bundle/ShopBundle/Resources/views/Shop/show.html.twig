@@ -5,12 +5,14 @@
 
     <table class="table table-striped">
         <tbody>
+        <img src="/ecmchess/web/images/uploads/{{ entity.image.webPath }}" class="product-img">
         <tr>
-            <td><img src="/ecmchess/web/images/uploads/{{ entity.image.webPath }}" class="product-img"></td>
             <td><h3>Desciption :</h3> {{ entity.description }}</td>
         </tr>
         <tr>
-            <td>{{ entity.prix }} €</td>
+            <td>
+                <div>{{ entity.prix }} €</div>
+            </td>
         </tr>
 
     </table>
